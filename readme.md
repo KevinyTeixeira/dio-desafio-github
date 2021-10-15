@@ -46,17 +46,18 @@ Repositório criado para o desafio de projeto, incluir todas as atividades da [D
 4. O editor de arquivos *Markdown(.md)*, muito útil para o Github:
 
    - **Typora** - [clique aqui para baixar o Typora](https://typora.io);
+   - Lista completa de **[emoticons](https://gist.github.com/rxaviers/7360908)**:skull::smiley::collision:;
 
 ## :bookmark_tabs:Atividades
 
 Abaixo, todas as atividades do **Bootcamp Eduzz Fullstack**:
 
-- [x] Boas-vindas ao **Bootcamp Eduzz Fullstack Developer**;
-- [x] Bem-vindo à **DIO**;
-- [x] Projetos ágeis com **SCRUM**;
-- [x] Lógica de Programação Essencial;
-- [x] Introdução ao **Git e ao Github**;
-- [x] Criando seu primeiro repositório no Github para compartilhar seu progresso;
+- [x] ~~Boas-vindas ao **Bootcamp Eduzz Fullstack Developer**~~;
+- [x] ~~Bem-vindo à **DIO**~~;
+- [x] ~~Projetos ágeis com **SCRUM**~~;
+- [x] ~~Lógica de Programação Essencial~~;
+- [x] ~~Introdução ao **Git e ao Github**~~;
+- [x] ~~Criando seu primeiro repositório no Github para compartilhar seu progresso~~;
 - [ ] Introdução a criação de websites com **HTML5 e CSS3**;
 - [ ] **JavaScript ES6** essencial;
 - [ ] Desenvolvimento avançado com JavaScript ES6;
