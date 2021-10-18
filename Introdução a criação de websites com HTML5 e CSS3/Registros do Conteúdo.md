@@ -8,7 +8,7 @@ Aqui registrarei todos os conteúdos que eu considerar importante nessa discipli
 
 ## :bookmark_tabs: Estrutura Básica do HTML5
 
-Antigamente era preciso utilizar vários elementos (também chamada de tags) <div> com atributos como <div class="o que seria isso?!"> para tentar ser o mais organizado possível, mas agora com o HTML5, foram introduzidos novos elementos para facilitar a organização da página. São eles:
+Antigamente era preciso utilizar vários elementos (também chamada de tags) `<div>` com atributos como <`div class="o que seria isso?!">` para tentar ser o mais organizado possível, mas agora com o HTML5, foram introduzidos novos elementos para facilitar a organização da página. São eles:
 
 #### Básicos:
 
@@ -16,23 +16,26 @@ Antigamente era preciso utilizar vários elementos (também chamada de tags) <di
 
 - `<html></html>` meio óbvio, mas o principal elemento de um arquivo html, é o fato de que todo o código deve estar dentro dos elementos html;
 
-- `<head></head>` dentro do head, vamos ter algumas "meta informações", informações que o navegador necessita, ou um buscador. Um exemplo é a <meta>, que pode ser usado para várias coisas, uma delas é a definição do "charset", que diz como o navegador deve interpretar os caracteres do site, ou a tag <title> que configura o nome da página.
+- `<head></head>` dentro do head, vamos ter algumas "meta informações", informações que o navegador necessita, ou um buscador. Um exemplo é a `<meta>`, que pode ser usado para várias coisas, uma delas é a definição do "charset", que diz como o navegador deve interpretar os caracteres do site, ou a tag `<title>` que configura o nome da página.
 
 - `<body></body>` meio óbvio, mas o principal elemento de um arquivo html, é o fato de que todo o código deve estar dentro dos elementos html;
 
   
 
   **A estrutura básica seria conforme abaixo :point_down: (clique para expandir):**
+  
+  ```html
+  <!DOCTYPE html>
+  <html>
+  	<head>
+      	<meta charset="utf-8">
+      	<title>"Título da minha página!"</title>
+      </head>
+      <body>
+      </body>
+  </html>
+  ```
 
-<!DOCTYPE html>
-<html>
-	<head>
-    	<meta charset="utf-8">
-    	<title>"Título da minha página!"</title>
-    </head>
-    <body>
-    </body>
-</html>
 
 #### Introduzidos no HTML 5:
 
@@ -49,6 +52,7 @@ Antigamente era preciso utilizar vários elementos (também chamada de tags) <di
 
 **Atualizando nossa estrutura... vejamos abaixo  :point_down: (clique para expandir):**
 
+```html
 <!DOCTYPE html>
 <html>
 	<head>
@@ -72,6 +76,8 @@ Antigamente era preciso utilizar vários elementos (também chamada de tags) <di
         <footer></footer>
     </body>
 </html>
+```
+
 
 #### :bookmark_tabs: Tags úteis (HTML)
 
@@ -98,7 +104,7 @@ Não vou abordar aqui as tags básicas, somente parâmetros ou atributos que rea
 
 O CSS permite modificar esteticamente uma página HTML, de forma muito mais ampla e prática do que poderia ser feito de forma direta no HTML.
 
-
+Para incluir o CSS em um documento html, é utilizado `<link rel="stylesheet" href="nome_do_arquivo.css">` dentro da tag `<head>`.
 
 #### Estrutura básica de um arquivo CSS:
 
@@ -126,42 +132,54 @@ O CSS permite modificar esteticamente uma página HTML, de forma muito mais ampl
 
 Exemplo de utilização dos atributos `<id>` e `<class>`:
 
+```html
 <!DOCTYPE html>
 <html>
 	<head>
     	<meta charset="utf-8">
-    	<title>"Título da minha página!"</title>
-        <link rel="stylesheet" href="style.css"> <!-- aplica o arquivo CSS na página! -->
+    	<title>Título da minha página!</title>
+        <link rel="stylesheet" href="style.css"> 
+		<!-- aplica o arquivo CSS na página! -->
     </head>
     <body>
-        <header id="principal">
-        	<h1>"Título desta header"</h1>
+        <header>
+        	<h1 id="title">Título desta header</h1>
         </header>
         <section>
-			<header class="secundaria">
-                <h2>"Título desta seção </h2>
+			<header>
+                <h2 class="subtitle">Título desta seção</h2>
             </header>
             <article>
-				<header class="terciaria">
-					<h3>"Título deste article"</h3>
+				<header>
+					<h3 class="postitle">Título deste article</h3>
 				</header>
             </article>
         </section>
         <footer></footer>
     </body>
 </html>
+```
+
 
 ```css
-.principal {
-font-size: 12px;
+body {
+	background-color: #ccc;
+	text-align: center;
 }
 
-#secundaria {
-color: gray;
+.title, #subtitle, #postitle {
+	color: blue;
 }
 
-#terciaria {
-text-align: center;
+.title {
+font-style: italic;
+}
+
+#subtitle {
+font-style: Times New Roman;
+}
+
+#postitle {
 font-style: calibri;
 }
 
@@ -178,6 +196,33 @@ font-style: calibri;
 ```
 
 
+
+#### :tv: Box Model
+
+A denominada *"Box Model"*, se refere ao layout de uma página. Todas as páginas webs podem ser divididas da seguinte forma:
+
+<img src="https://www.lilengine.co/sites/default/files/inline-images/Screen%20Shot%202019-04-14%20at%2023.59.07.png" alt="CSS Box-model" style="zoom:20%;" />
+
+- **MARGIN**: ou "margem", são os espaçamentos entre os elementos;
+- **BORDER**: ou "borda", circundam o padding e o conteúdo nos permitindo alterar sua aparência, como por exemplo largura e cor;
+- **PADDING**: é um espaçamento entra a borda e o content;
+- **CONTENT**: ou "conteúdo";
+
+Para visualizar exatamente o que está sendo falado aqui, e seguindo os códigos HTML aqui já listados, esse código de CSS aplica os elementos supracitados:
+
+```css
+body {
+	background: #ccc;
+}
+
+#secundaria {
+color: gray;
+/* teste cada um de forma individual, ativando e desativando livremente para enxergar as diferenças! */
+padding: 10px; 
+border: 3px solid #000;
+margin: 10px;
+}
+```
 
 
 

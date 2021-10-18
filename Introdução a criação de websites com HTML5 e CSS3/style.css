@@ -1,0 +1,28 @@
+body {
+	background-color: #ccc;
+	text-align: center;
+}
+
+.title {
+font-style: italic;
+color: red;
+}
+
+#subtitle {
+font-style: Times New Roman;
+}
+
+#postitle {
+font-style: calibri;
+}
+
+/*
+Ou você poderia ainda:
+
+.principal, #secundaria, #terciaria {
+font-size: 12px;
+color: gray (ou hexadecimal #333);
+font-style: calibri;
+}
+
+*/
