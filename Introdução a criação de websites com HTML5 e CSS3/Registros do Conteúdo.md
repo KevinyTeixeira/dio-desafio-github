@@ -23,7 +23,7 @@ Antigamente era preciso utilizar vários elementos (também chamada de tags) `<d
   
 
   **A estrutura básica seria conforme abaixo :point_down: (clique para expandir):**
-  
+
   ```html
   <!DOCTYPE html>
   <html>
@@ -167,29 +167,29 @@ body {
 	text-align: center;
 }
 
-.title, #subtitle, #postitle {
+#title, .subtitle, .postitle {
 	color: blue;
 }
 
 .title {
-font-style: italic;
+	font-style: italic;
 }
 
-#subtitle {
-font-style: Times New Roman;
+.subtitle {
+	font-style: Times New Roman;
 }
 
-#postitle {
-font-style: calibri;
+.postitle {
+	font-style: calibri;
 }
 
 /*
 Ou você poderia ainda:
 
 .principal, #secundaria, #terciaria {
-font-size: 12px;
-color: gray (ou hexadecimal #333);
-font-style: calibri;
+	font-size: 12px;
+	color: gray (ou hexadecimal #333);
+	font-style: calibri;
 }
 
 */
@@ -212,19 +212,154 @@ Para visualizar exatamente o que está sendo falado aqui, e seguindo os códigos
 
 ```css
 body {
-	background: #ccc;
+	background-color: #ccc;
 }
 
-#secundaria {
-color: gray;
+#title, .subtitle, .postitle {
+	color: blue;
+}
+
+.subtitle {
+	font-size: 16px;
+	font-style: italic;
+}
+
+.postitle {
+background-color: #FFFF;
 /* teste cada um de forma individual, ativando e desativando livremente para enxergar as diferenças! */
 padding: 10px; 
 border: 3px solid #000;
 margin: 10px;
 }
+
+/*
+Ou você poderia ainda:
+
+#title, .subtitle, .postitle {
+font-size: 12px;
+color: gray (ou hexadecimal #333);
+font-style: calibri;
+}
+
+*/
 ```
 
+Para ver a distribuição deste **BOX MODEL**, abra-o no *Google Chrome* e em seguida inspecione a página. É isso que você encontrará: 
+
+![image-20211018101322538](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018101322538.png)
+
+![image-20211018100854938](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018100854938.png)![image-20211018101228321](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018101228321.png)
+
+![image-20211018100926156](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018100926156.png)![image-20211018101200464](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018101200464.png)
+
+![image-20211018101037861](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018101037861.png)![image-20211018101051301](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018101051301.png)
+
+![image-20211018101106062](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018101106062.png)![image-20211018101132839](C:\Users\05725843181\AppData\Roaming\Typora\typora-user-images\image-20211018101132839.png)
 
 
 
+#### :label: **Comandos Úteis do CSS:**
+
+Vou registar alguns comandos muito úteis para fazer TODA a diferença em um site.
+
+- **MARGIN e PADDING**: essas estruturas podem ser configuradas separadamente, por exemplo, as medidas das margens não precisam ser uniforme. Você pode organizar isso usando as propriedades **top (:arrow_up:), bottom (:arrow_down:), left (:arrow_left:) e right (:arrow_right:)**; exemplos: `padding-bottom: 5 px`; `margin-top: 12px`;
+- __*__: Sim, esse asterisco mesmo, com ele você aplica os parâmetros CSS a todo o HTML, pode ser útil para configurar o BOX MODEL como um todo;
+
+```css
+@charset "utf-8";
+* {
+	margin: 10px;
+	padding: 5px;
+}
+```
+
+- **Top, bottom, left e right:** essas propriedades podem também serem usadas de forma isoladas, as quais são traduzidas na página como a distância da extremidade da tela. Essa distância pode ser em **px**, ou em em **%**.
+
+```css
+.uma_Lista ul {
+	top: 1%;
+    left: 10 px;
+}
+```
+
+- **FLOAT :** o `float` é um comando que permite a um elemento "sair" da camada principal de contexto de um navegador, sei que fica sem sentido dizer contexto, mas imagine uma imagem 3D, poisé, o `float` faz justamente com que o elemento em questão tenha prioridade na tela, colocando todo o resto na segunda camada de contexto. Alguns comandos que podem apoiar nos ajustes com o `float` são: `overflow (hidden)`, que controla o "excedente" de tela e `clear (both, left, right)`, que controla se o elemento afetado deve ser posicionado abaixo de um elemento sob float; (para mais sobre isso, você pode assistir [esse vídeo](https://www.youtube.com/watch?v=E1tR7sYMEN0))
+
+```css
+.uma_Lista ul {
+	float: left;
+}
+
+.uma_Lista2 ul {
+	float: right;
+}
+
+.um_Texto p {
+	clear: both; /* ambos os lados */
+}
+```
+
+- **DISPLAY**: essa propriedade permite organizar um conjunto de elementos (**li's** de uma **ul**, por exemplo),  e pode ser declarada com 3 parâmetros:
+
+  - `Display: inline;`- alinha os elementos numa mesma linha, separando-os por espaços. Um detalhe importante sobre os espaços, é que eles são provocados pelo "Enter" na linha de código, que o browser interpreta como um "Espaço", além disso é importante dizer também que essa propriedade faz com que os elementos **ignorem as dimensões *Width* e *Height*** declaradas; (Para mais sobre isso, você pode assistir [esse vídeo](https://www.youtube.com/watch?v=5PS6ku8NzIE))
+  - `Display: block;` - alinha os elementos numa "coluna", ocupando uma linha inteira para cada um dos elementos. Diferentemente do `inline`, essa propriedade permite que você declare **Width** e **Height**;  (Para mais sobre isso, você pode assistir [esse vídeo](https://www.youtube.com/watch?v=HWfhwokS_qg))
+  - `Display: inline-block;` - alinha os elementos numa mesma linha, separando-os por espaços, mas permitindo que você controle a **Width** e **Height**; (Para mais sobre isso, você pode assistir [esse vídeo](https://www.youtube.com/watch?v=Yj9-N9BEVeM))
+
+- **BACKGROUND:** essa propriedade altera o fundo do elemento (ou conjunto de elementos), podendo ser um **gradiente**, uma **cor estática** ou uma **imagem**.
+
+  ```css
+  header {
+  	
+      /* Em todos os casos */
+      background-position: center center; /* (Centralizada o fundo x,y) */
+      border: 10px solid #6c5ce7; /* (Tamanho, Tipo, Cor) */
+      border-radius: 50%; /* (Aplica um efeito radial na borda)
+      
+      /* Background-color */
+      background-color: gray; /* (Expressão literal) */
+      background-color: #808080; /* (Hexadecimal) */
+      background-color: rgb(128,128,128); /* (Red, Green, Blue) */
+      background-color: rgba(128,128,128,0); /* (Red, Green, Blue, Alpha) */
+      
+      /* Background-image */
+      background-image: url(link); /* (Aplica uma imagem) */
+      background-size: cover; /* (Ajusta altura/largura ao elemento) */
+      background-repeat: non-repeat; /* (Não permite a repetição da imagem) */
+          
+      /* Background-image (Gradiente) */
+      background-image: linear-gradient(green 50%, red 25%, blue 25%); /* (1st color, 2nd color, 3rd color, etc) */
+      background-image: radial-gradient(green 50%, red 25%, blue 25%); /* (Radial) */
+  	background-image: linear-gradient(to left, green 50%, red); /* (Direcionando à <-) */
+      background-image: repeating-radial-gradient(black, white 10px); /* (Certo, agora você está sendo hipnotizado) */
+      background-image: repeating-linear-gradient(45deg, black, white 10px); /* (Girou um pouco) */
+      
+      /* Background-image (IDEIA TOP) */
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/background.png') /* E assim você usa um .png, com gradiente ao fundo! */
+  }
+  ```
+
+- :star: **Transições:** você pode definir uma "variante" estética para as regras do CSS, baseadas em "estado" de um objeto. A seguir, uma lista das **principais** "Transições" que você pode fazer para tornar a página mais "viva". A lista completa você pode encontrar [aqui](https://www.w3schools.com/css/css_pseudo_classes.asp).
+
+  ```css
+  /* CSS Pseudo Classes */
+  #seletor:hover {} /* (Executa quando o mouse está sobre o elemento) */
+  #seletor:focus {} /* (Executa quando a pessoa seleciona o elemento em questão) */
+  #seletor:link {} /* (Executa enquanto um link ainda não foi visitado) */
+  #seletor:visited {} /* (Executa após um link ter sido visitado) */
+  #seletor:active {} /* (Executa quando a pessoa seleciona o elemento em questão) */
+  
+  /* CSS Pseudo Elementos */
+  #seletor::after {} /* (Insere um conteúdo após a execução do seletor) */
+  #seletor::before {} /* (Insere um conteúdo após a execução do seletor) */
+  
+  /* Propriedades para Transições */
+  #seletor {
+      transition-property: border-color; /* (Você precisa indicar qual propriedade será afetada pela transição, é possível aplicar uma mesma transição para todas as propriedades CSS do elemento, basta colocar o valor 'all') */
+      transition-duration: 1s; /* (duração do efeito em segudos, o padrão é 0) */
+      transition-timing-function: linear; /* (linear, ease, ease-in, ease-out, ease-in-out | se trata do rítmo da transição) */
+      transition-timing-function: cubic-bezier(0.005, 0.625, 0.365, 0.0840); /* (é definindo uma função customizada, especificando quatro coordenadas para definir a cubic bezier curve) */
+      transition-delay: 0.1s; /* (Define quanto tempo o efeito demora para iniciar) */
+      ...
+      
+  }
+  ```
 
