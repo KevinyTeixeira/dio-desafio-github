@@ -1,25 +1,28 @@
 body {
 	background-color: #ccc;
-	text-align: center;
 }
 
-.title {
-font-style: italic;
-color: red;
+#title, .subtitle, .postitle {
+	color: blue;
 }
 
-#subtitle {
-font-style: Times New Roman;
+.subtitle {
+	font-size: 16px;
+	font-style: italic;
 }
 
-#postitle {
-font-style: calibri;
+.postitle {
+background-color: #FFFF;
+/* teste cada um de forma individual, ativando e desativando livremente para enxergar as diferenças! */
+padding: 10px; 
+border: 3px solid #000;
+margin: 10px;
 }
 
 /*
 Ou você poderia ainda:
 
-.principal, #secundaria, #terciaria {
+#title, .subtitle, .postitle {
 font-size: 12px;
 color: gray (ou hexadecimal #333);
 font-style: calibri;
