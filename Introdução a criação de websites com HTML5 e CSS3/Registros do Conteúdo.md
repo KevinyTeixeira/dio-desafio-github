@@ -16,14 +16,14 @@ Antigamente era preciso utilizar vários elementos (também chamada de tags) `<d
 
 - `<html></html>` meio óbvio, mas o principal elemento de um arquivo html, é o fato de que todo o código deve estar dentro dos elementos html;
 
-- `<head></head>` dentro do head, vamos ter algumas "meta informações", informações que o navegador necessita, ou um buscador. Um exemplo é a `<meta>`, que pode ser usado para várias coisas, uma delas é a definição do "charset", que diz como o navegador deve interpretar os caracteres do site, ou a tag `<title>` que configura o nome da página.
+- `<head></head>` dentro d   o head, vamos ter algumas "meta informações", informações que o navegador necessita, ou um buscador. Um exemplo é a `<meta>`, que pode ser usado para várias coisas, uma delas é a definição do "charset", que diz como o navegador deve interpretar os caracteres do site, ou a tag `<title>` que configura o nome da página.
 
 - `<body></body>` meio óbvio, mas o principal elemento de um arquivo html, é o fato de que todo o código deve estar dentro dos elementos html;
 
   
 
   **A estrutura básica seria conforme abaixo :point_down: (clique para expandir):**
-
+  
   ```html
   <!DOCTYPE html>
   <html>
@@ -268,8 +268,14 @@ Vou registar alguns comandos muito úteis para fazer TODA a diferença em um sit
 ```css
 @charset "utf-8";
 * {
-	margin: 10px;
-	padding: 5px;
+	margin: 10px; /* aplica a margem em todas as direções */
+	margin: 10px 10px 10px 10px; /* CIMA DIREITA BAIXO ESQUERDA */
+	margin-top: 10px; /* Aplica margem na parte superior */
+	margin-right: 10px; /* Aplica margem na lateral direita */
+	margin-bottom: 10px; /* Aplica margem na parte inferior */
+	margin-left: 10px; /* Aplica margem na lateral esquerda */
+    
+	padding: 5px; /* também pode ser declarado como... margin: 10px(cima) 5px(direita)10px(baixo) 0px(esquerda) */
 }
 ```
 
@@ -299,7 +305,6 @@ Vou registar alguns comandos muito úteis para fazer TODA a diferença em um sit
 ```
 
 - **DISPLAY**: essa propriedade permite organizar um conjunto de elementos (**li's** de uma **ul**, por exemplo),  e pode ser declarada com 3 parâmetros:
-
   - `Display: inline;`- alinha os elementos numa mesma linha, separando-os por espaços. Um detalhe importante sobre os espaços, é que eles são provocados pelo "Enter" na linha de código, que o browser interpreta como um "Espaço", além disso é importante dizer também que essa propriedade faz com que os elementos **ignorem as dimensões *Width* e *Height*** declaradas; (Para mais sobre isso, você pode assistir [esse vídeo](https://www.youtube.com/watch?v=5PS6ku8NzIE))
   - `Display: block;` - alinha os elementos numa "coluna", ocupando uma linha inteira para cada um dos elementos. Diferentemente do `inline`, essa propriedade permite que você declare **Width** e **Height**;  (Para mais sobre isso, você pode assistir [esse vídeo](https://www.youtube.com/watch?v=HWfhwokS_qg))
   - `Display: inline-block;` - alinha os elementos numa mesma linha, separando-os por espaços, mas permitindo que você controle a **Width** e **Height**; (Para mais sobre isso, você pode assistir [esse vídeo](https://www.youtube.com/watch?v=Yj9-N9BEVeM))
@@ -311,10 +316,12 @@ Vou registar alguns comandos muito úteis para fazer TODA a diferença em um sit
   	
       /* Em todos os casos */
       background-position: center center; /* (Centralizada o fundo x,y) */
-      border: 10px solid #6c5ce7; /* (Tamanho, Tipo, Cor) */
+      border: 10px solid #6c5ce7; /* (Tamanho, Estilo[solid, dotted ou dashed], Cor) */
       border-radius: 50%; /* (Aplica um efeito radial na borda)
+      border-radius: 10% 20% 15% 22%; /* (Aplica um efeito radial na borda, CIMA DIREITA BAIXO ESQUERDA)
       
       /* Background-color */
+      background: gray; /* (Expressão literal) */
       background-color: gray; /* (Expressão literal) */
       background-color: #808080; /* (Hexadecimal) */
       background-color: rgb(128,128,128); /* (Red, Green, Blue) */
@@ -358,8 +365,11 @@ Vou registar alguns comandos muito úteis para fazer TODA a diferença em um sit
       transition-timing-function: linear; /* (linear, ease, ease-in, ease-out, ease-in-out | se trata do rítmo da transição) */
       transition-timing-function: cubic-bezier(0.005, 0.625, 0.365, 0.0840); /* (é definindo uma função customizada, especificando quatro coordenadas para definir a cubic bezier curve) */
       transition-delay: 0.1s; /* (Define quanto tempo o efeito demora para iniciar) */
-      ...
       
   }
   ```
+
+
+
+
 
