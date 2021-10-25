@@ -64,7 +64,7 @@ Abaixo, todas as atividades do **Bootcamp Eduzz Fullstack**:
 - [x] ~~Lógica de Programação Essencial~~;
 - [x] ~~Introdução ao **Git e ao Github**~~;
 - [x] ~~Criando seu primeiro repositório no Github para compartilhar seu progresso~~;
-- [x] Introdução a criação de websites com **HTML5 e CSS3**;
+- [x] ~~Introdução a criação de websites com **HTML5 e CSS3**~~;
 - [ ] **JavaScript ES6** essencial;
 - [ ] Desenvolvimento avançado com JavaScript ES6;
 - [ ] Introdução ao **TypeScript**: Explorando Classes, Tipos e Interfaces;
