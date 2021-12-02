@@ -81,98 +81,12 @@ Isso ocorre porque **ao não encontrar o valor de x no escopo da função fora, 
 
 ## 📑Conceitos Importantes do JavaScript
 
-- **Currying:** cria uma outra função dentro de uma função já existente, permitindo que um dos parâmetros utilizados possam usar declarações simplificadas, como o exemplo abaixo:
-
-  ```javascript
-  /* Exemplo: */
-  
-  /* Cenário sem o uso do CURRYING */
-  function soma(a, b) {
-      return a + b;
-  }
-  
-  console.log(soma (2, 2));
-  console.log(soma (2, 3));
-  console.log(soma (2, 4));
-  console.log(soma (2, 5));
-  console.log(soma (2, 6));
-  
-  /* Cenário com o uso do CURRYING */
-  function soma(a) {
-      return function(b) {
-          return a + b;
-      }
-  }
-  
-  const soma2 = soma(2);
-  
-  console.log(soma2(2));
-  console.log(soma2(3));
-  console.log(soma2(4));
-  console.log(soma2(5));
-  console.log(soma2(6));
-  ```
-
-- **Hoisting:** permite que uma variável ou função seja utilizada, mesmo que esta ainda não tenha sido "lida" pela execução do código. Isso impede que o código apresente um erro, entretanto o valor da variável é mostrado como "Undefined". O Hoisting **também pode ser aplicado em funções**, com o único diferencial de que para as funções,  Veja o exemplo abaixo:
-
-  ```javascript
-  /* Exemplo: */
-  
-  /* Veja a seguinte função... */
-  function fn () {
-  	console.log(text);
-  	var text = 'Exemplo';
-  	console.log(text);
-  }
-  
-  fn();
-  
-  /* Perceba que a variável text só é declarada no meio da função, sendo que ela já é requisitada antes mesmo de ser declarada! A saída do código será a seguinte: 
-  - Undefined
-  - Exemplo
-  
-  Na íntegra, é isso o que acontece: */
-  
-  function fn () {
-     	var text; /* A variável é "Içada" para ser declarada antes mesmo da execução; */
-      
-  	console.log(text);
-      text = 'Exemplo';
-     	console.log(text);
-  }
-  ```
-
-- **Imutabilidade:** é um conceito que prevê a imutabilidade de objetos. Quando você tenta inserir um novo atributo a um objeto, ao invés de acrescentá-lo, o JavaScript cria um novo objeto, cópia do último e inclui o novo atributo. 
-
-  ```javascript
-  /* Exemplo: */
-  
-  /* Veja a seguinte declaração dos atributos name e lastName... */
-  const user = {
-  	name: 'Keviny',
-  	lastName: 'Teixeira de Jesus'
-  }
-  
-  /* Agora com uma função, vamos criar um novo atributo chamado fullName, para que faça parte do objeto user */
-  function getUserWithFullName(user) {
-  	return {
-  		...user, /* para cada user... */
-  		fullName: '${user.name} ${user.lastName}' /* adicionar o atributo fullName... */
-  	}
-  }
-  
-  const userWithFullName = getUserWithFullName(user);
-  
-  console.log(userWithFullName, user); /* imprime os dois objetos... */
-  
-  /* Saída do userWithFullName:
-  { name: 'Keviny',
-  lastName:'Teixeira de Jesus',
-  fullName: 'Keviny Teixeira de Jesus' } { name: 'Keviny', lastName:'Teixeira de Jesus' }
-  */
-  ```
-
-
+- **Currying:** cria uma outra função dentro de uma função já existente, permitindo que um dos parâmetros utilizados possam usar declarações simplificadas.
+  - :globe_with_meridians: **[Exemplo de Currying](link)**;
+- **Hoisting:** permite que uma variável ou função seja utilizada, mesmo que esta ainda não tenha sido "lida" pela execução do código. Isso impede que o código apresente um erro, entretanto o valor da variável é mostrado como "Undefined". O Hoisting **também pode ser aplicado em funções**, com o único diferencial de que para as funções.
+  - :globe_with_meridians: **[Exemplo de Hoisting](link)**;
+- **Imutabilidade:** é um conceito que prevê a imutabilidade de objetos. Quando você tenta inserir um novo atributo a um objeto, ao invés de acrescentá-lo, o JavaScript cria um novo objeto, cópia do último e inclui o novo atributo.
+  - :globe_with_meridians: **[Exemplo de Imutabilidade](link)**;
 
 ## :earth_americas: A importância de entender o ESCOPO do JavaScript
 
@@ -281,3 +195,27 @@ function addText() {
   Valor após a execução do if "valor função"
   ```
 
+
+
+## :dart: Tipos e Variáveis no JavaScript
+
+​	O JavaScript, na data deste documento possui atualmente **6 tipos de variáveis primitivas**, e **3 tipos de objetos**. Além de listá-los aqui, também irei incluir os comandos mais utilizados dentro de cada tipo de variável, entretanto, esses exemplos serão linkados a um arquivo externo dentro do repositório, a fim de não poluir de mais este resumo.
+
+1. `string`; 
+   - Veja aqui os **[comandos mais utilizados de STRING](link)**;
+2. `number`;
+   - Veja aqui os **[comandos mais utilizados de NUMBER](link)**;
+3. `boolean`;
+   - Veja aqui os **[comandos mais utilizados de BOOLEAN](link)**;
+4. `null`;
+   - Veja aqui os **[comandos mais utilizados de NULL](link)**;
+5. `undefined`;
+   - Veja aqui os **[comandos mais utilizados de UNDEFINED](link)**;
+6. `symbol`;
+   - Veja aqui os **[comandos mais utilizados de SYMBOL](link)**;
+7. `object`;
+   - Veja aqui os **[comandos mais utilizados de OBJECT](link)**;
+8. `function`;
+   - Veja aqui os **[comandos mais utilizados de FUNCTION](link)**;
+9. `array`;
+   - Veja aqui os **[comandos mais utilizados de ARRAY](link)**;
