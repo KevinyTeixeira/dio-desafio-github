@@ -1,6 +1,8 @@
-# 📚JavaScript ES6 Essencial
+# 📚 JavaScript ES6 Essencial
 
 Aqui registrarei todos os conteúdos que eu considerar importante nessa disciplina, algo como um bloco de *"Anotações"* para que eu possa retornar futuramente caso considere necessário.
+
+Acesse o **[documento de estudo do JavaScript ES6 Avançado]()** para mais detalhes práticos da programação em sí.
 
 ## 📑 Características do JavaScript
 

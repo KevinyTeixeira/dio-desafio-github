@@ -4,9 +4,9 @@ Muito conteúdo prático, vamos praticar truques de refatoração e metodologias
 
 
 
-## :bookmark_tabs: 1. Uso de Arrow Functions
+## :bookmark_tabs: > 1. Uso de Arrow Functions
 
-No ES6, as `arrow functions ` substituem os modelos tradicionais de função para um modelo que permite um retorno implícito.
+No ES6, as `Arrow Functions ` substituem os modelos tradicionais de função para um modelo que permite um retorno implícito.
 
 ```javascript
 // Modelo Tradicional de uma Função	
@@ -46,9 +46,9 @@ obj.showContext();
 
 
 
-## :school_satchel: 2. DEFAULT ARGUMENTS
+## :school_satchel: > 2. Default Arguments
 
-Entender como as implementações se comportam, faz parte do que faz um **excelente desenvolvedor**. Com isso em mente, vamos abaixo analisar o comportamento dos argumentos passados em uma função em diferentes cenários:
+Entender como as implementações se comportam, faz parte do que faz um **excelente desenvolvedor**. Com isso em mente, vamos abaixo analisar o comportamento dos argumentos passados em uma função em diferentes cenários, bem como analisar formas de refatorá-los.
 
 ```javascript
 /* CENÁRIO 1: função comum com 2 parâmetros */
@@ -166,7 +166,7 @@ console.log(multiply(5));
 
 
 
-## :fireworks: 3. ENHACED OBJECT LITERALS
+## :fireworks: > 3. Enhaced Object Literals
 
 Vamos trabalhar com objetos e verificar as formas de se trabalhar com propriedades e métodos.
 
@@ -281,11 +281,11 @@ console.log(obj);
 
 
 
-##  :sparkler: 4. REST(...) e SPREAD (...) Operator
+##  :sparkler: > 4. Rest/Spread (...) Operator
 
-Os operadores **Rest** e **Spread** permitem trabalhar com múltiplos parâmetro em funções. 
+Os operadores **`Rest`** e **`Spread`** permitem trabalhar com múltiplos parâmetro em funções. 
 
-#### **REST OPERATOR**
+#### 4.1 **Rest Operator**
 
 ​	Pega todos os parâmetros de uma função e os transforma em um Array.
 
@@ -351,7 +351,7 @@ const sum = (a, b, ...rest) => {
 console.log(sum(5, 5, 5, 2, 3)); 
 ```
 
-#### **SPREAD OPERATOR**
+#### 4.2 **Spread Operator**
 
 ​	Pega todos os itens de um Array e os transforma em parâmetros para uma função. Pode ser utilizado em **strings, arrays, objetos literais e objetos iteráveis**.
 
@@ -610,11 +610,11 @@ Desta vez deu certo, apenas o subObj de obj2 foi alterado!
 */
 ```
 
-##  :boom::exclamation: 5. Destructuring em ReactJS!
+##  :boom: > 5. Destructuring
 
-O **Destructuring** é utilizado para destruir arrays e devolver os valores dentro dele. Ao trabalhar com JavaScript, em vários cenários acabamos por pegar parte de variáveis e atribuindo a outras variáveis.
+O **`Destructuring`** é utilizado para destruir arrays e devolver os valores dentro dele. Ao trabalhar com JavaScript, em vários cenários acabamos por pegar parte de variáveis e atribuindo a outras variáveis.
 
-```react
+```javascript
 /* CENÁRIO 1: crie um array, no qual variáveis possam se utilizar dos valores desse array para serem definidos, baseados em suas posições  */
 
 var arr = ['Apple', 'Banana', 'Orange'];
@@ -628,7 +628,7 @@ console.log(apple);
 //RETORNO: Apple
 ```
 
-```react
+```javascript
 /* CENÁRIO 2: faça o mesmo código indicado no cenário 1, entratanto usando o DESTRUCTURING ASSIGNMENT  */
 
 var [apple, banana, orange] = ['Apple', 'Banana', 'Orange']; // Dessa forma, em "var []" nós não estamos construindo o array, mas instruindo sobre como deve ser criado. Desta forma ele fará o memso papel do cenário 1, correlacionado a variável/posição do array/valor!
@@ -638,7 +638,7 @@ console.log(apple);
 //RETORNO: Apple | Mesmo resultado do cenário 1!
 ```
 
-```react
+```javascript
 /* CENÁRIO 4: crie um objeto com a propriedade name, em seguida crie uma variável que receba o valor dessa propriedade  */
 
 var obj = {
@@ -651,7 +651,7 @@ console.log(name);
 //RETORNO: Celso
 ```
 
-```react
+```javascript
 // DESTRUCTURING EM SUBPROPRIEDADES
 /* CENÁRIO 5: agora baseado no cenário 4, faça a mesma declaração utilizando o DESTRUCTURING ASSIGNMENT  */
 
@@ -668,7 +668,7 @@ console.log(name2);
 //RETORNO: Celso
 ```
 
-```react
+```javascript
 // COMPORTAMENTO DO DESCRUCTURING
 /* CENÁRIO 6: verifique o comportamento do DESTRUCTURING, no caso de alterar o valor da variável após destruir um objeto e sua propriedade, para verificar se o valor da propriedade em si também é alterada  */
 
@@ -685,7 +685,7 @@ console.log(name2); //RETORNO: João
 // O valor da propriedade name no objeto permanece inalterado!
 ```
 
-```react
+```javascript
 // DESTRUCTURING EM SUBPROPRIEDADES
 /* CENÁRIO 7: crie um objeto que contenha uma subPropriedade, em seguida tente obter o valor da subPropriedade e inseri-la numa variável! */
 
@@ -707,7 +707,7 @@ var { //1. Destruímos o objeto
 console.log(age); //RETORNO: 26
 ```
 
-```react
+```javascript
 // DESTRUCTURING EM SUBPROPRIEDADES
 /* CENÁRIO 8: faça um destructuring em um subPropriedade que contenha valores dentro de um Array */
 
@@ -732,19 +732,19 @@ var { // 1. Destruímos o objeto
 
 name2 = 'João';
 
-var print => {
+var print = () => {
     console.log(age); //RETORNO: 26
     console.log(color1); //RETORNO: red
     console.log(color2); //RETORNO: blue
     console.log(color3); //RETORNO: green 
 };
 
-print;
+print();
 
 // O valor da propriedade name no objeto permanece inalterado!
 ```
 
-```react
+```javascript
 // DESTRUCTURING EM FUNÇÕES
 /* CENÁRIO 9: faça uma função para somar duas posições de um Array */
 
@@ -756,7 +756,7 @@ console.log(sum([5, 5]));
 //RETORNO: 10
 ```
 
-```react
+```javascript
 // DESTRUCTURING EM FUNÇÕES
 /* CENÁRIO 10: faça uma função para somar duas posições de um Array */
 
@@ -768,7 +768,7 @@ console.log(sum([5, 5]));
 //RETORNO: 10
 ```
 
-```react
+```javascript
 // DESTRUCTURING EM FUNÇÕES
 /* CENÁRIO 11: utilize o conceito de DESTRUCTURING junto com o DEFAULT VALUES! */
 
@@ -783,7 +783,7 @@ console.log(sum([5, 5])); // Dessa forma não pega o nosso valor Deafult
 //RETORNO: 10
 ```
 
-```react
+```javascript
 // DESTRUCTURING EM FUNÇÕES
 /* CENÁRIO 11: utilize o conceito de DESTRUCTURING, mas ao invés de arrays utilize objetos! */
 
@@ -795,9 +795,9 @@ console.log(sum({ a: 5, b: 5})); // As propriedades precisam necessariamente pos
 //RETORNO: 10
 ```
 
-##  :cancer::recycle: 6. Symbols e Iterators!
+##  :recycle: > 6. Symbols e Iterators
 
-#### SYMBOLS
+#### 6.1 Symbols
 
 Symbols é uma maneira de gerar um identificador único, esse identicador é o Symbol.
 
@@ -833,7 +833,9 @@ console.log(obj);
 //RETORNO: {Symbol(Hello): "Hello"}
 ```
 
-Symbols, possuem métodos que permitem manipular seus valores, esses  métodos são conhecidos como **Well Know Symbols**. São eles:
+Symbols, possuem métodos que permitem manipular seus valores, esses  métodos são conhecidos como **`Well Know Symbols`**. São eles:
+
+#### 6.2 `symbol.iterator`
 
 ```javascript
 // WKS, symbol.iterator: é uma "interface" que pode ser utilizada para consumir, passo a passo, uma lista ou estrutura de dados através do método next.
@@ -876,8 +878,690 @@ while (true) { // Enquanto não for verdadeiro...
 4 */
 ```
 
+```javascript
+// WKS, symbol.iterator
+/* CENÁRIO 3: com o ES¨6, é possível refatorarmos o loop com o conhecido "for of", recrie o loop do CENÁRIO 2 utilizando for of */
+
+const arr = [1, 2, 3, 4];
+const str = 'Digital Innovation One'
+
+for (let value of arr) {
+	console.log(value); // RETORNO: 1 2 3 4
+}
+
+for (let value of str) {
+	console.log(value); // RETORNO: D I G I T A L  I N  N O V A T I O N  O N E
+}
 ```
-// WKS, symbol.toStringTag
-/* CENÁRIO 3: ## */
+
+```javascript
+// WKS, symbol.iterator
+/* CENÁRIO 4: com o ES¨6, é possível refatorarmos o loop com o conhecido "for of", recrie o loop do CENÁRIO 2 utilizando for of */
+
+const arr = [1, 2, 3, 4];
+const str = 'Digital Innovation One'
+
+const obj = {
+    values: [1, 2, 3, 4],
+    [Symbol.iterator]() {
+        
+    }
+}
+for (let value of arr) {
+	console.log(value); // RETORNO: 1 2 3 4
+}
+
+for (let value of str) {
+	console.log(value); // RETORNO: D I G I T A L  I N  N O V A T I O N  O N E
+}
+```
+
+```javascript
+// WKS, symbol.iterator
+/* CENÁRIO 5: objetos literais não são iteráveis, portanto não se pode utilizar loopes em objetos. Tente iterar um objeto de forma que permita o uso do for of */
+
+
+// console.log(arr[Symbol.iterator]().next());
+
+const obj = {
+    values: [1, 2, 3, 4],
+    [Symbol.iterator]() { // Para cada uma das minhas iterações, quero retornar um valor da minha lista e se acabou ou não!
+        let i = 0; // Índice que inicie 0;
+        
+        return { // Vamos retornar um outro objeto
+            next: () => { // Aqui vamos utilizar o Arrow Function para que possa acessar o this
+            i++; // A cada iteração subimos o índice
+         		// A cada vez que a iteração acessar o next, faça: 
+                return { // O this aqui tem o contexto do obj, portanto é obj!
+                    value: this.values[i - 1], // Trata o value retornado pelo iterator 
+                    done: i > this.values.length // Trata o done retornado pelo iterator
+                };
+            }
+        };
+    }
+};
+
+for (let value of obj) {
+    console.log(value); // RETORNO: 1 2 3 4
+}
+```
+
+
+
+##  :gem: > 7. Generators
+
+São funções com pausa, podendo pausar e retornar valores utilizando a interface de interação do **`symbol.interator`**. A sequência é acionada pelo comando `next`, e a pausa por `<yield>`.
+
+**Observação: ** a sintaxe para os Generators atualmente não conseguem ser utilizados em arrow functions.
+
+```javascript
+// CENÁRIO 1: crie um generator contendo 3 impressões sequenciais, com pausa entre eles. Utilize yield para pausar, e next para avançar;
+
+// Para pausar utilizando funções, você teria que pensar em toda uma lógica que talvez não fosse viável. Para isso existem os generators, controladores de execução.
+
+// No momento da execução da função suspensa, você poderá conferir o PROTOTYPE de um Generator, o qual lhe apresenta as funções next, return e throw que servem para controlar a execução.
+
+function* hello() { // O * ao lado de function, indica que essa função é uma generator
+    console.log('Hello');
+    yield;
+    console.log('From');
+    yield;
+    console.log('Function');
+    yield;
+}
+
+const it = hello();
+
+console.log(it); // Nessa execução, não há sequência, a função está suspensa.
+// RETORNO: hello{<suspended>}
+
+console.log(it.next()); // O next aciona a sequência de execução
+// RETORNO: Hello {value: undefined, done: false}
+
+console.log(it.next()); // O next aciona a sequência de execução
+// RETORNO: From {value: undefined, done: false}
+
+console.log(it.next()); // O next aciona a sequência de execução
+// RETORNO: Function {value: undefined, done: true}
+```
+
+Repare que ao retornar uma execução após o uso do comando `next`, o Generator retorna `{value: undefined, done: false}`. Estas propriedades podem ser utilizadas a seu favor para interagir e controlar o retorno a cada execução.
+
+```javascript
+// CENÁRIO 2: utilizando-se do cenário 1, repasse um parâmetro para value;
+
+function* hello() { // O * ao lado de function, indica que essa função é uma generator
+    console.log('Hello');
+    yield 1; // Desta forma, value terá o valor de 1
+    console.log('From');
+    yield 2; // Desta forma, value terá o valor de 2
+    console.log('Function');
+    yield 3; // Desta forma, value terá o valor de 3
+}
+
+const it = hello();
+
+console.log(it); // Suspenso
+console.log(it.next()); // 1
+console.log(it.next()); // 2
+console.log(it.next()); // 3
+
+/*
+RETORNO:
+Hello {value: 1, done: false}
+From {value: 2, done: false}
+Function {value: 3, done: true}
+*/
+```
+
+```javascript
+// CENÁRIO 3: você também pode passar parâmetros para a função next, a fim de executar algo quando yield é acionado. Faça o teste utilizando-se do cenário 2;
+
+function* hello() { // O * ao lado de function, indica que essa função é uma generator
+    console.log('Hello');
+    yield 1;
+    console.log('From');
+    const value = yield 2;
+    
+    console.log(value); // você verá que value tem o valor do parâmetro passado a ele.
+}
+
+const it = hello();
+
+console.log(it); // Suspenso
+console.log(it.next()); // 1
+console.log(it.next()); // 2
+console.log(it.next('Outside')); // 3
+
+/*
+RETORNO:
+Hello {value: 1, done: false}
+From {value: 2, done: false}
+Outside {value: undefined, done: true}
+*/
+```
+
+```javascript
+// CENÁRIO 4: crie uma iteração que aplique yield para pausar a execução, e que permita um loop de números infinitos;
+
+// Esse mecanismo é poderoso, porque apesar de termos loops infinitos, podemos iterar quantas vezes quisermos, baseado nos comandos next.
+
+function* naturalNumbers() {
+    let number = 0;
+    while (true) { // só será acionado com o comando next! 
+        yield number;
+        number++;
+    }
+}
+
+const it = naturalNumbers();
+
+console.log(it.next()); // 0
+console.log(it.next()); // 1
+console.log(it.next()); // 2
+console.log(it.next()); // 3
+
+/*
+RETORNO:
+{value: 0, done: false}
+{value: 1, done: false}
+{value: 2, done: false}
+{value: 3, done: false}
+*/
+```
+
+Agora vamos praticar o uso de Generators na interface do symbol.iterator.
+
+```javascript
+// CENÁRIO 5: baseando-se no último exemplo de symbol.iterator, aplique o generator na função!
+
+const obj = {
+    values: [1, 2, 3, 4],
+    *[Symbol.iterator]() { // Ao inserir o *, as funções de generator podem ser utilizadas!
+        for (var i = 0; i < this.values.length; i++) {
+            yield this.values[i]; // não precisamos construir um objeto com next porque o nosso generator faz isso, por isso podemos utilizar os generators como forma de construir iteradores
+        }
+    }   
+}
+for (let value of obj) {
+    console.log(value); // RETORNO: 1 2 3 4
+}
+
+// Tivemos o mesmo comportamento do exemplo anterior, mas com uma refatoração de código muito mais eficaz!
+```
+
+
+
+## :name_badge: > 8. Callbacks e Promises
+
+Nativamente, no JavaScript, é muito comum utilizar funções de callbacks para executar algo após uma tarefa assíncrona ter sido executada, para exemplificar isso:
+
+```javascript
+// CALLBACK
+// CENÁRIO 1: 
+
+function doSomething(callback) {
+	setTimeout(function() {
+        // did something
+        callback('First data');
+    }, 1000);
+}
+
+
+function doOtherThing(callback) {
+	setTimeout(function() {
+        // did something
+        callback('Second data');
+    }, 1000);
+}
+
+function doAll() {
+    doSomething(function(data) {
+        var processedData = data.split('');
+        
+    doOtherThing(function(data2)) {
+        var processedData = data.split('');
+        
+        setTimeout(function() {
+            console.log(processedData, processedData2);
+        }, 1000)
+    }
+    })
+}
+
+doAll();
+```
+
+
+
+## :space_invader: > 9. Contexto de Programação
+
+Sem entender como o escopo funciona, haverá muitas confusões com o funcionamento do `this`, do hoisting, e por aí vai. Por isso, vamos entender como funciona!
+
+##### 9.1 Entenda o "Escopo" (`Scope`) e o "Contexto" (`Context`)
+
+```javascript
+// TEORIA;
+
+// ## 1. Escopo (Scope)
+	- **Acesso** ás variáveis, funções e objetos numa parte do código, DURANTE o tempo de execução;
+    - Determina a **visibilidade** desses recursos em alguma parte do código;
+    - Sempre invocamos uma função, estamos criando um novo 'scope';
+    
+// ## 2. Contexto (Context)
+	- Enquanto o 'scope' se refere às diversas variáveis, o 'context' se refere ao valor 'this' no mesmo 'scope';
+    - Pode ser mudado com funções especiais como: .apply(), .call() e .bind();
+    - No contexto de execução 'execution context' o contexto já não é mais esse contexto da discussão. O contexto de execução é o 'scope', por isso mencionamentos "DURANTE A EXECUÇÃO" em 'scope';
+    
+// ## 3. Temos 2 'scopes':
+    
+    1. 'Global'
+		- No momento que começamos a escrever código, estamos nesse contexto;
+		- Existe enquanto existir a aplicação;
+	2. 'Local'
+		- Dentro de alguma função, variáveis estão no escopo (contexto) local;
+		- Existe enquanto existir a função ou o objeto;
+
+// ## 4. Modo Estrito (strict mode):
+    - Muda a semântica do javascript;
+	- É opcional;
+	- '"use strict"' para habilitar no contexto;
+	- Elimina alguns erros silenciosos;
+	- Evita algumas confusões;
+	- Proíbe algumas sintaxes;
+```
+
+```javascript
+// PRÁTICA;
+// global scope
+this.name = "Diego";
+
+console.log("Este é o escopo global"); // Nesse momento, o this se refere ao "Window" que é o escopo global.
+
+function myLocalScope() {
+    // local scope
+    console.log("Este é o escopo local"); 
+}
+
+sayMyName();
+```
+
+
+
+##### 9.2 Manipulando o Escopo
+
+Certo, mas e se eu realmente quiser passar os argumentos e o escopo de um elemento para uma função ou objeto? Para isso há comandos que permitem a manipulação do escopo.
+
+**`call.js`**
+
+```javascript
+// function.call(this, arg1, arg2)
+// Leia-se: "call, chama a função tal e envia o this para dentro dela e os seus argumentos".
+// Retorna o this do contexto que eu enviar
+
+// CENÁRIO 1: faça uma função capaz de imprimir e tratar declarações feitas no escopo global e de objeto;
+
+this.name = "Camila"; // .name definida no escopo global;
+
+function sayMyName() {
+    console.log(this.name);
+}
+
+const dev = {
+    name: "Isabela" // .name definida no escopo de objeto;
+}
+
+sayMyName.call(this); // Retorno: Camila | Pega o escopo global e o envia para a função.
+sayMyName.call(dev);  // Retorno: Isabela |Pega o escopo de dev e o envia para a função.
+```
+
+```javascript
+// PRÁTICA
+// CENÁRIO 2: usando como base o cenário 1, imprima também a idade, que deve ser obtida no escopo global e de objeto;
+
+this.name = "Camila";
+
+function sayMyName(age) {
+    this.age = age; // Aplica o escopo recebido na nossa variável age
+    console.log(this.name, this.age);
+}
+
+const dev = {
+    name: "Isabela"
+}
+
+sayMyName.call(this, 18); // Retorno: Camila 18 | Pega o escopo global e o envia para a função, adicionalmente também envia o parâmetro age.
+sayMyName.call(dev, 19);  // Retorno: Isabela 19 | Pega o escopo de dev e o envia para a função,  adicionalmente também envia o parâmetro age.
+```
+
+**`apply.js`**
+
+```javascript
+// function.apply(this, [arg1, arg2])
+// Leia-se: "apply, chama a função tal e envia o this para dentro dela e um array de argumentos".
+// Retorna o this do contexto que eu enviar
+
+// CENÁRIO 1: faça uma função capaz de receber argumentos de uma propriedade global utilizando o .apply, trate e imprima utilizando o comando arguments (interage com os itens de um array);
+
+this.name = "Camila"; // .name definida no escopo global;
+this.age = 25;
+
+function sayMyName() { // Agora a função não prevê um parâmetro
+    this.age = arguments[0]; // Entretanto, o apply repassa os argumentos do escopo, e com arguments nós o guardamos em uma variável;
+    this.likes = arguments[1];
+    this.clothes = arguments[2];
+    console.log(this.name, this.age, this.likes, this.clothes);
+}
+
+sayMyName.apply(this, [18, "banana", "vestido"]); // 
+// Retorno: Camila 18 banana vestido 
+```
+
+```javascript
+// PRÁTICA
+// CENÁRIO 2: crie uma função que seja capaz de receber inúmeros argumentos, e repasse esses argumentos para uma function que os converta em Array e os multiplique;
+
+function multiply() {
+    const args = Array.from(arguments); // transforma a lista de argumentos em um array (utilizando Array.from(Arguments)), em seguida os guarda em args
+    return args.reduce((acc, item)) => { // Aplica a função reduce para iterar sobre cada elemento e gerar um único valor final
+        return acc * item; // acc = acumulador
+    }, 1); // inicia o acumulador em 1
+}
+
+const total = multiply.apply (this, [2, 2, 3, 2]); // Repassa o this, e o LikeArray (porque não é um array de fato, tanto que precisamos transformá-los na função para aplicar o .reduce) de argumentos
+console.log(total);
+// Retorno: 24
+```
+
+**`bind.js`**
+
+```javascript
+// function.bind(contexto)
+// retorna a função chamada, porém sempre vinculada ao contexto argumentado.
+// bound function
+
+// CENÁRIO 1: crie uma variável, que utilize a função sayMyName vinculada ao dev, e outra vinculada ao global);
+
+function sayMyName(age) {
+    this.age = age; // Aplica o escopo recebido na nossa variável age
+    console.log(this.name, this.age);
+}
+
+const dev = {
+    name: "Isabela"
+}
+
+this.name = "Camila";
+this.age = 25;
+
+// Também pode ser escrito como: sayMyName.bind(this)(20)
+const boundSayMyName = sayMyName.bind(this) // Ao utilizar essa variável, a função sempre será utilizada considerando o escopo global, porque nesse instante this se refere ao escopo global!
+const boundSayMyName2 = sayMyName.bind(dev) // Ao utilizar essa variável, a função sempre será utilizada considerando o escopo do objeto dev, porque nesse instante this se refere ao escopo de objeto!
+
+boundSayMyname(18); // RETORNO: Camila 18
+boundSayMyname2(19); // RETORNO: Isabela 19
+```
+
+```javascript
+// PRÁTICA
+// CENÁRIO 2: crie uma variável, que utilize a função sayMyName vinculada ao dev, e outra vinculada ao global);
+
+const dev = {
+    name: "Isabela",
+    age: 35,
+    sayMyAge: function() { // Método sayMyAge dentro do objeto
+        console.log(this.name, this.age);
+    }
+}
+/*
+const age = dev.sayMyAge;
+age(); se focê passar dessa forma, perceberá que o retorno será UNDEFINED UNDEFINED. Isso ocorre porque o método foi tirado do contexto de dev, ele agora está "desligado" sem saber em qual contexto trabalhar. Para resolver isso utilizamos o .bind para religar ao contexto de dev
+*/
+
+const age = dev.sayMyAge.bind(dev);
+age();
+```
+
+
+
+##### 9.3 Domine o "`this`"
+
+Sem entendê-lo, por muitas vezes você poderá vivenciar vários problemas silenciosos que não são identificáveis facilmente. E caso não saiba utilizá-lo, também perde a oportunidade de usar suas propriedades.
+
+```javascript
+// TEORIA;
+// ## 1. O que é "this"?
+    
+    'this' em inglês significa: 'isto, esta'.
+
+	Automaticamente somos levados a pensar: Isto o que? Esta o que?. Assim, precisamos estar situados em algum contexto para entender o 'this'.
+    
+    Imagine que você está na sua casa. E você chega na sua família e fala: "Eu amo **esta** casa". Você não diz que ama outra casa, e não está se referindo a outra casa. Aí você toca na mesa e diz: "Eu amo **esta** mesa", "**esse** sofá", "amo **isto** tudo". No contexto da casa, você possui e se refere a estas coisas.
+    
+    O 'this' em javascript possui a mesma idéia.
+    
+    O comportamento DEPENDE do contexto ('context') ou do escopo ('scope') na qual 'this' é invocada.
+    
+    Como no exxemplo da casa, o 'this' pode ser a casa, pode ser o sofá ou a mesa. O que vai dizer o que significa o 'this' é o contexto.
+    
+	[...] portanto, 'this' depende:
+	 - 1. Escopo e Contexto;
+     - 2. Modo Estrito 'user strict';
+```
+
+```javascript
+// PRÁTICA;
+
+// global scope
+this.name = "Diego";
+
+console.log(this.name); // Nesse momento, o this no escopo global de um browser, é o mesmo que "Window".
+
+function sayMyName() {
+    // local scope
+    console.log(this.name); // Nesse momento, o this se refere a function "sayMyName", e como essa função não possui um name definido, resulta em UNDEFINED
+}
+
+sayMyName();
+```
+
+O **`this`** pode ser tratado de forma diferente dependendo do ambiente em que é executado, veja:
+
+```javascript
+// PRÁTICA;
+// CENÁRIO 1: Faça a declaração .name no escopo global e tente invocar essa propriedade dentro de uma função.
+
+// 'use strict' | Leia abaixo para entender o que isso significa!
+
+this.name = "Valeska"; // Global Scope
+
+function sayMyName() { // Local Scope
+	console.log(this.name); 
+}
+
+sayMyName(); // RETORNO: Undefined
+```
+
+:warning: **IMPORTANTE:** No `Node.js`, o javascript respeitará a divisão de escopo e retornará `undefined`. Entretanto, no `navegador` ou outros ambientes, o javascript poderá fazer uso do `Hoisting`, buscando a declaração no escopo externo!
+
+Para controlar o uso do `this` em outros ambientes, usamos o **`use strict`**, e dessa forma os escopos serão respeitados em todos os ambientes.
+
+```javascript
+// PRÁTICA;
+// CENÁRIO 2: Faça a declaração .name no escopo global e tente invocar essa propriedade dentro de um contexto de objeto.
+
+this.name = "Valeska"; // Global Scope
+
+const user = {
+    name: "Diego", // Nesse caso name está sendo declarada como propriedade dentro do objeto user, por isso funciona.
+    // Entretanto, vale destacar que caso a propriedade name não existisse aqui, o escopo local do objeto é respeitado retornando UNDEFINED, mesmo não tendo "Use Strict"!
+    sayMyName: function() {
+    	console.log(this.name);
+    }
+}
+
+user.sayMyName(); // RETORNO: Diego;
+```
+
+```javascript
+// PRÁTICA;
+// CENÁRIO 3: Supondo que o código será executado COM 'use strict', como ele se comportaria?
+
+'use strict'
+
+// Global Scope
+this.name = "Valeska";
+
+// Local Function Scope
+// - Não pega o escopo global, mas se não tiver no modo estrito, sim!
+function sayMyName() { 
+	console.log(this.name); 
+}
+
+// Local Object Scope
+// - Não pega o escopo global, somente do objeto. Independente do modo estrito!
+const user = {
+    sayMyName: function() {
+    	console.log(this.name);
+    }
+}
+
+console.log(window.name); // Window se refere ao browser em si no escopo global;
+user.sayMyName();
+
+/*
+RETORNO: 
+Valeska		| Global Scope
+Undefined	| Local Function Scope
+Undefined	| Local Object Scope
+Valeska		| Window.name
+*/
+```
+
+```javascript
+// PRÁTICA;
+// CENÁRIO 4: Supondo que o código será executado SEM 'use strict', como ele se comportaria?
+
+// Global Scope
+this.name = "Valeska";
+
+// Local Function Scope
+// - Não pega o escopo global, mas se não tiver no modo estrito, sim!
+function sayMyName() { 
+	console.log(this.name); 
+}
+
+// Local Object Scope
+// - Não pega o escopo global, somente do objeto. Independente do modo estrito!
+const user = {
+    sayMyName: function() {
+    	console.log(this.name);
+    }
+}
+
+console.log(window.name); // Window se refere ao browser em si no escopo global;
+user.sayMyName();
+
+/*
+RETORNO: 
+Valeska		| Global Scope
+Valeska		| Local Function Scope
+Undefined	| Local Object Scope, o escopo de objeto continua sendo respeitado!
+Valeska		| Window.name
+*/
+```
+
+```javascript
+// PRÁTICA;
+// CENÁRIO 5: Estude o comportamento do this, quando há uma função dentro de outra função.
+
+// Global Scope
+this.name = "Valeska";
+
+// Local Function Scope
+function age(age) {
+    this.name = "Joshua";
+    
+    // 2nd Local Function Scope
+    function birthYear(age) {
+        this.name = "Kyam";
+        
+        const year = 2019 - age;
+        console.log(this.name, year);
+    }
+    
+    birthYear(age);
+    
+    console.log(this.name);
+}
+
+console.log(this.name); // chamando no Global Scope
+
+age(25); // chamando a função, como o parâmetro 25
+
+/*
+RETORNO: 
+Valeska		| Global Scope
+Kyam		| Local Function Scope (Foi alterado por conta da segunda função!)
+Kyam		| 2nd Local Function Scope
+*/
+```
+
+```javascript
+// PRÁTICA;
+// CENÁRIO 6: refaça o cenário 5, mas desta vez utilizando Arrow Functions e estude seu comportamento.
+// Pega o this do escopo anterior
+
+// Global Scope
+this.name = "Valeska";
+
+// Local Function Scope
+const age = age => {
+    const birthYear = age => {
+        const year = 2019 - age;
+        console.log(this.name, year);
+    };
+    
+    birthYear(age);
+};
+
+const dev = {
+    sayMyName: () => {
+        this.name = "Enzo"; // Se não for declarado, mais uma vez ele usa 
+    }
+};
+
+age(25);// invoca a função
+dev.sayMyName(); // 
+console.log(this.name); // chamando no Global Scope
+
+/*
+RETORNO: 
+Valeska		| Global Scope
+Valeska		| Local Function Scope (Foi utilizado o escopo global)
+Enzo		| Object dev (É utilizada a declaração do escopo global, em seguida alterada conforme o objeto dev)
+*/
+```
+
+```javascript
+// CONTEXTO DE CLASSE (CONTEXT CLASS)
+// PRÁTICA;
+// CENÁRIO 6: estude como é o comportamento dos escopos nos casos em que uma classe é instanciada
+
+class Alo {
+	constructor() {
+        this.hello = "Olá";
+    }
+    
+    sayHello() { // Método
+        console.log(this.hello);
+    }
+}
+*/
+
+const hello = new Alo();
+
+hello.sayHello(); // RETORNO: "Olá"
+// O this está disponível por toda a classe.
 ```
 
