@@ -2,8 +2,6 @@
 
 Muito conteúdo prático, vamos praticar truques de refatoração e metodologias desenvolvimento!
 
-
-
 ## :bookmark_tabs: > 1. Uso de Arrow Functions
 
 No ES6, as `Arrow Functions ` substituem os modelos tradicionais de função para um modelo que permite um retorno implícito.
@@ -1100,29 +1098,28 @@ Nativamente, no JavaScript, é muito comum utilizar funções de callbacks para 
 // CALLBACK
 // CENÁRIO 1: 
 
-function doSomething(callback) {
+function doSomething(callback) { // estabelece uma contagem e retorna First Data para callback
 	setTimeout(function() {
         // did something
         callback('First data');
     }, 1000);
 }
 
-
-function doOtherThing(callback) {
+function doOtherThing(callback) { // estabelece uma contagem e retorna Second Data para callback
 	setTimeout(function() {
         // did something
         callback('Second data');
     }, 1000);
 }
 
-function doAll() {
-    doSomething(function(data) {
+function doAll() { // executa ambas de forma sequencial
+    doSomething(function(data) { //invoca a doSomething, passando a função que vai receber o callback com os dados
+        var processedData = data.split(''); //split nos dados
+        
+    doOtherThing(function(data2)) { 
         var processedData = data.split('');
         
-    doOtherThing(function(data2)) {
-        var processedData = data.split('');
-        
-        setTimeout(function() {
+        setTimeout(function() { //estabelece uma contagem antes de retornar os dados processados
             console.log(processedData, processedData2);
         }, 1000)
     }
@@ -1130,15 +1127,329 @@ function doAll() {
 }
 
 doAll();
+// RETORNO:
+(10)["F", "i", "r", "s", "t", " ", "d", "a", "t", "a"] // O método split divide a string em caracteres
+(11)["S", "e", "c", "o", "n", "d", " ", "d", "a", "t", "a"]
 ```
 
 
 
-## :space_invader: > 9. Contexto de Programação
+#### 8.1 Callbacks com `Try/Catch`
+
+Tudo funciona corretamente, entretanto se tiver problemas, nós utilizamos o **`try`** e **`catch`** para tratar os erros ocorridos. Veja abaixo:
+
+```javascript
+// CALLBACKS | TRY/CATCH
+// CENÁRIO 2: utilizando o CENÁRIO 1 monte uma estrutura de código que permita tratar os erros em cada execução utilizando try/catch;
+
+function doSomething(callback) { // estabelece uma contagem e retorna First Data para callback
+	setTimeout(function() {
+        // did something
+        callback('First data');
+    }, 1000);
+}
+
+function doOtherThing(callback) { // estabelece uma contagem e retorna Second Data para callback
+	setTimeout(function() {
+        // did something
+        callback('Second data');
+    }, 1000);
+}
+
+// Peceba o quão complexo o código fica, somente para tratar cada operação!! Este é o chamado callback HELL
+
+function doAll() { // executa ambas de forma sequencial
+    try{
+        doSomething(function(data)) { // invoca a doSomething, passando a função que vai receber o callback com os dados
+        	var processedData = data.split('');
+        	try {
+                doOtherThing(function(data2)) {
+                	var processedData2 = data2.split('');
+                
+                	try {
+                        setTimeout(function() { // estabelece uma contagem antes de retornar os dados processados
+                            console.log(processedData, processedData2);
+                        }, 1000);
+                    } catch (err) {
+                        // handle error
+                    }
+            	});
+    		} catch (err) {
+                // handle error
+            }
+		});
+	} catch (err) {
+        // handle error
+    }
+}
+
+doAll();
+// RETORNO:
+(10)["F", "i", "r", "s", "t", " ", "d", "a", "t", "a"] // O método split divide a string em caracteres
+(11)["S", "e", "c", "o", "n", "d", " ", "d", "a", "t", "a"]
+```
+
+#### 8.2 `Promisses`
+
+```javascript
+// PROMISSES
+// CENÁRIO 3: recrie o cenário 1, mas desta vez utilizando Promisses;
+
+const doSomethingPromise = 
+	new Promise((resolve, reject) => {
+		throw new Error('Something went wrong'); // Simula um erro!
+        setTimeout(function() {
+            //did something
+            resolve('First data'); // ao invés de callback, chamamos o "resolved"
+        }, 1000);
+    });
+
+const doOtherThingPromise = 
+      new Promise((resolve, reject) => {
+		setTimeout(function() {
+		//did something
+		resolve('Second data'); // ao invés de callback, chamamos o "resolved"
+		}, 1000);
+	});
+
+console.log(doSomethingPromise);
+// RETORNO: Promise {<pending>} | É o estado atual da promisse nesta estrutura de codificação.
+
+/*
+`Promisses` possuem 3 estágios:
+
+- Pending: quando está pendente (em execução).
+- Fulfilled: quando a execução foi finalizada.
+- Rejected: quando houve um erro na execução.
+  */
+
+// Para executar o código corretamente, deve ser repassado os dados de execução para a promisse, da seguinte forma:
+doSomethingPromise.then(data => console.log(data));
+```
+
+
+
+```javascript
+// PROMISSES
+// CENÁRIO 4: procure executar o código, bem como estruturar o tratamento dos erros utilizando promisses;
+
+const doSomethingPromise = 
+	new Promise((resolve, reject) => {
+		throw new Error('Something went wrong'); // Simula um erro!
+        setTimeout(function() {
+            //did something
+            resolve('First data'); // ao invés de callback, chamamos o "resolved"
+        }, 1000);
+    });
+
+// Para executar o código corretamente, deve ser repassado os dados de execução para a promisse, da seguinte forma:
+doSomethingPromise
+    .then(data => console.log(data)); // repassa os dados executados para a promisse, em seguida os apresenta em um console.log
+	.catch(error => console.log('Ops', error)); // Qualquer erro que acontecer será tratado por este catch
+```
+
+```javascript
+// PROMISSES
+// CENÁRIO 5: realize um encadeamento de doSomethingPromise e doOtherThingPromise para que ambos sejam executadas sequencialmente e simule a execução de um erro;
+
+const doSomethingPromise = 
+	new Promise((resolve, reject) => {
+		throw new Error('Something went wrong'); // Simula um erro!
+        setTimeout(function() {
+            //did something
+            resolve('First data'); // ao invés de callback, chamamos o "resolved"
+        }, 1000);
+    });
+
+const doOtherThingPromise = 
+      new Promise((resolve, reject) => {
+		setTimeout(function() {
+		//did something
+		resolve('Second data'); // ao invés de callback, chamamos o "resolved"
+		}, 1000);
+	});
+
+// Para executar o código corretamente, deve ser repassado os dados de execução para a promisse, da seguinte forma:
+doSomethingPromise
+	.then(data => {
+    	console.log(data); // console.log, dados recebidos da primeira PROMISE
+	    return doOtherThingPromise(); // Na sequência, executa a segunda PROMISE
+	})
+    .then(data2 => console.log(data2)); // console.log, dados recebidos da segunda PROMISE
+	.catch(error => console.log('Ops', error)); // Ambas as PROMISSES serão tratadas por este catch
+```
+
+```javascript
+// PROMISSES
+// CENÁRIO 6: replique o código do CENÁRIO 1 utilizando as promisses;
+
+const doSomethingPromise = 
+	new Promise((resolve, reject) => {
+        setTimeout(function() {
+            resolve('First data');
+        }, 1000);
+    });
+
+const doOtherThingPromise = 
+      new Promise((resolve, reject) => {
+		setTimeout(function() {
+		resolve('Second data');
+		}, 1000);
+	});
+
+// Executando...
+doSomethingPromise
+	.then(data => {
+    	console.log(data.split(''));
+	    return doOtherThingPromise();
+	})
+    .then(data2 => console.log(data2.split('')));
+	.catch(error => console.log('Ops', error));
+
+// Perceba como conseguimos o mesmo comportamento, com tratamento de erro e com o código mais simples ao utilizar PROMISSES!
+```
+
+```javascript
+// PROMISSES EM PARALELO (AO MESMO TEMPO)
+// CENÁRIO 7: simule a execução de duas promisses em paralelo e observe seu comportamento;
+
+const doSomethingPromise = 
+	new Promise((resolve, reject) => {
+        setTimeout(function() {
+            resolve('First data');
+        }, 1000);
+    });
+
+const doOtherThingPromise = 
+      new Promise((resolve, reject) => {
+		setTimeout(function() {
+		resolve('Second data');
+		}, 1000);
+	});
+
+// Coloca a execução das promisses em um Array e os executa em paralelo!
+Promise.all([doSomethingPromise(), doOtherThingPromise()])
+    .then(data => {
+    	console.log(data[0].split('')); // Retorna os dados obtidos da posição 0
+        console.log(data[1].split('')); // Retorna os dados obtidos da posição 1
+    })
+    .catch(err => {
+    	console.log(err);
+    });
+
+/*
+RETORNO: 
+(10)["F", "i", "r", "s", "t", " ", "d", "a", "t", "a"] // O método split divide a string em caracteres
+(11)["S", "e", "c", "o", "n", "d", " ", "d", "a", "t", "a"]
+*/
+```
+
+```javascript
+// PROMISSES RACE (A QUE FINALIZAR PRIMEIRO, SERÁ EXECUTADA)
+// CENÁRIO 8: simule a execução de uma promisse race e observe seu comportamento;
+
+const doSomethingPromise = 
+	new Promise((resolve, reject) => {
+        setTimeout(function() {
+            resolve('First data');
+        }, 1500);
+    });
+
+const doOtherThingPromise = 
+      new Promise((resolve, reject) => {
+		setTimeout(function() {
+		resolve('Second data');
+		}, 1000); // Esta executará primeiro
+	});
+
+// Coloca a execução das promisses em um Array e os executa em paralelo!
+Promise.race([doSomethingPromise(), doOtherThingPromise()])
+    .then(data => {
+    	console.log(data.split('')); // Retorna os dados daquele que finalizar a execução mais rápido
+	})
+    .catch(err => {
+    	console.log(err);
+    });
+
+/*
+RETORNO: 
+(11)["S", "e", "c", "o", "n", "d", " ", "d", "a", "t", "a"],
+*/
+```
+
+
+
+## :crown: > 8. Fetch, Async/Await e EventEmitter
+
+Tradicionalmente para fazer requisições, um **XML**, um **JSON de API's**, **Arquivos** e etc. Era utilizado uma API do Browser chamada de **`XMLHttpRequest`**, porém como vimos anteriormente, utilizar **`callbacks`** pode ser complicado e acabarmos caindo no chamado **"Callback Hell"**. Pensando nisso foi introduzida uma nova API chamada **`Fetch`**, que tem o mesmo intuito de fazer requisições, mas trabalha utilizando **`Promisses`**.
+
+```javascript
+// data.json
+{
+    "data": [1, 2, 3, 4] // uma propriedade contendo um Array de 4 números
+}
+```
+
+```javascript
+// CENÁRIO 1: faça uma requisição usando fetch e imprima informações sobre o responseStream
+fetch('/data.json') // busca no localhost (url: "http:localhost:808/data.json")
+    .then(responseStream => { // faz o processamento dos dados requisitados
+	    console.log(responseStream) // imprime as informações relacionadas ao responseStream
+	})
+```
+
+```javascript
+// CENÁRIO 2: a forma como responseStream será usada depende do tipo de dado que está sendo requisitada, simule a requisição de um json imprimindo os dados recebidos
+
+fetch('/data.json')
+    .then(responseStream => {
+	    return responseStream.json().then(data => { // processa as informações para um .json. Sabendo que o retorno da Stream é uma promisse, tratamos os dados recebidos para imprimi-los
+            console.log(data);
+        });
+	});
+
+// Também pode ser escrito da seguinte forma abaixo, (já aplicando catch)
+fetch('/data.json')
+	.then(responseStream -> responseStream.json()) // Se aplicarmos uma promisse no .then, ele será encadeado, um tipo de flashmap, retorna uma promisse no meu then, encadeio com o próximo e resolvo de maneira mais legível.
+	.then(data => {
+    	console.log(data);
+}).catch(err => {
+    console.log('Erro: ', err);
+});
+
+/* RETORNO: 
+{data: Array(3)}
+*/
+```
+
+```javascript
+// CENÁRIO 3: simule um erro de rede e analise como o erro lhe é apresentado;
+
+fetch('http://localhost:8080/dataXPTO.json') // Endereço Errado!
+	.then(responseStream -> responseStream.json())
+	.then(data => {
+    	console.log(data);
+}).catch(err => {
+    console.log('Erro: ', err);
+});
+
+/* RETORNO: 
+ERROR: GET http://localhost:8080/dataXPTO.json 404 (not found)
+Observe que apesar de ter ocorrido erro de rede, o nosso erro não foi tratado por catch, isso porque a execução não é interrompida, 
+*/
+```
+
+
+
+
+
+## **(...)**
+
+## :space_invader: > 15. Contexto de Programação
 
 Sem entender como o escopo funciona, haverá muitas confusões com o funcionamento do `this`, do hoisting, e por aí vai. Por isso, vamos entender como funciona!
 
-##### 9.1 Entenda o "Escopo" (`Scope`) e o "Contexto" (`Context`)
+##### 15.1 Entenda o "Escopo" (`Scope`) e o "Contexto" (`Context`)
 
 ```javascript
 // TEORIA;
@@ -1188,7 +1499,7 @@ sayMyName();
 
 
 
-##### 9.2 Manipulando o Escopo
+##### 15.2 Manipulando o Escopo
 
 Certo, mas e se eu realmente quiser passar os argumentos e o escopo de um elemento para uma função ou objeto? Para isso há comandos que permitem a manipulação do escopo.
 
@@ -1324,7 +1635,7 @@ age();
 
 
 
-##### 9.3 Domine o "`this`"
+##### 15.3 Domine o "`this`"
 
 Sem entendê-lo, por muitas vezes você poderá vivenciar vários problemas silenciosos que não são identificáveis facilmente. E caso não saiba utilizá-lo, também perde a oportunidade de usar suas propriedades.
 
