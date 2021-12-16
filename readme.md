@@ -58,15 +58,15 @@ Repositório criado para o desafio de projeto, incluir todas as atividades da [D
 
 Abaixo, todas as atividades do **Bootcamp Eduzz Fullstack**:
 
-- [x] ~~Boas-vindas ao **Bootcamp Eduzz Fullstack Developer**~~;
-- [x] ~~Bem-vindo à **DIO**~~;
-- [x] ~~Projetos ágeis com **SCRUM**~~;
-- [x] ~~Lógica de Programação Essencial~~;
-- [x] ~~Introdução ao **Git e ao Github**~~;
-- [x] ~~Criando seu primeiro repositório no Github para compartilhar seu progresso~~;
-- [ ] Introdução a criação de websites com **HTML5 e CSS3**;
-- [ ] **JavaScript ES6** essencial;
-- [ ] Desenvolvimento avançado com JavaScript ES6;
+- [x] ~~Boas-vindas ao **Bootcamp Eduzz Fullstack Developer**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/1. Boas-vindas ao Bootcamp Eduzz Fullstack Developer.pdf)
+- [x] ~~Bem-vindo à **DIO**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/2. Bem-vindo à DIO - Digital Innovation One.pdf)
+- [x] ~~Projetos ágeis com **SCRUM**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/3. Projetos ágeis com SCRUM.pdf)
+- [x] ~~**Lógica de Programação** Essencial~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/4. Lógica de Programação Essencial.pdf)
+- [x] ~~Introdução ao **Git e ao Github**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/5. Introdução ao Git e ao Github.pdf)
+- [x] ~~Criando seu primeiro **repositório no Github** para compartilhar seu progresso~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/6. Criando seu Primeiro Repositório no Github para Compartilhar Seu Progresso.pdf)
+- [x] ~~Introdução a criação de websites com **HTML5 e CSS3**~~;  :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Introdu%C3%A7%C3%A3o%20a%20cria%C3%A7%C3%A3o%20de%20websites%20com%20HTML5%20e%20CSS3/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/7. Introdução a Criação de Websites com HTML5 e CSS3.pdf)
+- [x] ~~**JavaScript ES6** essencial~~;  :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/JavaScript ES6 Essencial/Registros do Conteúdo.md) | :paperclip: [**[Certificado]**]([dio-desafio-github/8. JavaScript ES6 essencial.pdf at main · KevinyTeixeira/dio-desafio-github](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/8. JavaScript ES6 essencial.pdf)) 
+- [x] ~~Desenvolvimento **avançado com JavaScript ES6**~~; :file_folder:  [**Conteúdo**] |  :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/9. Desenvolvimento Avançado com JavaScript ES6.pdf)
 - [ ] Introdução ao **TypeScript**: Explorando Classes, Tipos e Interfaces;
 - [ ] Resolvendo Desafios de Código em JavaScript
 - [ ] Desafios iniciais em **JavaScript**;
