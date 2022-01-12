@@ -70,7 +70,7 @@ Abaixo, todas as atividades do **Bootcamp Eduzz Fullstack**:
 - [x] ~~Introdução ao **TypeScript**: Explorando Classes, Tipos e Interfaces~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/TypeScript/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/10.%20Introdu%C3%A7%C3%A3o%20ao%20TypeScript.pdf)
 - [x] ~~Resolvendo Desafios de Código em JavaScript~~;
 - [x] ~~Desafios iniciais em **JavaScript**~~;
-- [x] ~~Criando seu jogo de memória estilo Genius~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/geniusproject-fromdio) | :paperclip: [**[Certificado]**]() | :video_game: [[**Genius Game**]](https://kevinyteixeira.github.io/geniusproject-fromdio/)
+- [x] ~~Criando seu jogo de memória estilo Genius~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/geniusproject-fromdio) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados Bootcamp Eduzz Fullstack Developer/12. Criando seu jogo de memória estilo Genius.pdf) | :video_game: [[**Genius Game**]](https://kevinyteixeira.github.io/geniusproject-fromdio/)
 - [ ] Introdução ao **ReactJS**;
 - [ ] Trabalhando com Componentes em React;
 - [ ] Desenvolvimento de aplicações para internet com ReactJS;
