@@ -68,9 +68,9 @@ Abaixo, todas as atividades do **Bootcamp Eduzz Fullstack**:
 - [x] ~~**JavaScript ES6** essencial~~;  :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/JavaScript%20ES6%20Essencial/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/8.%20JavaScript%20ES6%20essencial.pdf)
 - [x] ~~Desenvolvimento **avançado com JavaScript ES6**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/JavaScript%20ES6%20Essencial/JavaScript%20ES6%20Avan%C3%A7ado.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/9.%20Desenvolvimento%20Avan%C3%A7ado%20com%20JavaScript%20ES6.pdf)
 - [x] ~~Introdução ao **TypeScript**: Explorando Classes, Tipos e Interfaces~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/TypeScript/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/10.%20Introdu%C3%A7%C3%A3o%20ao%20TypeScript.pdf)
-- [x] Resolvendo Desafios de Código em JavaScript;
-- [x] Desafios iniciais em **JavaScript**;
-- [x] Criando seu jogo de memória estilo Genius; :file_folder: [[**Conteúdo**]]() | :paperclip: [**[Certificado]**]() :video_game:**[Genius Game]**
+- [x] ~~Resolvendo Desafios de Código em JavaScript~~;
+- [x] ~~Desafios iniciais em **JavaScript**~~;
+- [x] ~~Criando seu jogo de memória estilo Genius~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/geniusproject-fromdio) | :paperclip: [**[Certificado]**]() | :video_game: [[**Genius Game**]](https://kevinyteixeira.github.io/geniusproject-fromdio/)
 - [ ] Introdução ao **ReactJS**;
 - [ ] Trabalhando com Componentes em React;
 - [ ] Desenvolvimento de aplicações para internet com ReactJS;
