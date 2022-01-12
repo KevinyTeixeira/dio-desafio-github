@@ -1,0 +1,404 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/**********************************/
+/* IMPORTS
+/**********************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&family=Share+Tech&display=swap');
+
+/**********************************/
+/* SUMARY
+/**********************************/
+
+/**********************************/
+/* COLOR GUIDE:
+/* #2003c5 : normal-blue
+/* #1f60eb : light-blue
+/* #6464a5 : soft-blue
+/* #ffe600 : normal-yellow
+/* #ebcc1f : light-yellow
+/* #c5b803 : soft-yellow
+/* #eb1f1f : normal-red
+/* #c50303 : light-red
+/* #c04d4d : soft-red
+/* #41eb1f : normal-green
+/* #6bc503 : light-green
+/* #4dc04d : soft-green
+
+/* NOTES:
+/* Some effects used are maked by animista:
+/* - https://animista.net/play/text/tracking-in/tracking-in-contract-bck;
+/* The game has made with tutorials like:
+/* - DIO CONTENT (https://web.dio.me/home);
+/* - Inkasa Dev (https://www.youtube.com/channel/UCPGJqGxkYfmxO77LCh2Vimw);
+
+/**********************************/
+
+/**********************************/
+/* 0. VARIÁVEIS
+/**********************************/
+
+:root {
+
+      /*  COLORS */
+    --clr-normal-blue: #2003c5;
+    --clr-light-blue: #1f60eb;
+    --clr-soft-blue: #6464a5;
+    --clr-normal-yellow: #ffe600;
+    --clr-light-yellow: #ebcc1f;
+    --clr-soft-yellow: #c5b803;
+    --clr-normal-red: #eb1f1f;
+    --clr-light-red: #c50303;
+    --clr-soft-red: #c04d4d;
+    --clr-normal-green: #41eb1f;
+    --clr-light-green: #6bc503;
+    --clr-soft-green: #4dc04d;
+    --clr-blue: linear-gradient(-15deg, var(--clr-normal-blue), var(--clr-light-blue), var(--clr-soft-blue));
+    --clr-yellow: linear-gradient(-15deg, var(--clr-normal-yellow), var(--clr-light-yellow), var(--clr-soft-yellow));
+    --clr-red: linear-gradient(-15deg, var(--clr-normal-red), var(--clr-light-red), var(--clr-soft-red));
+    --clr-green: linear-gradient(-15deg, var(--clr-normal-green), var(--clr-light-green), var(--clr-soft-green));
+    --clr-border: #333333;
+	--clr-center: #ECE7EE;
+    --clr-counter-bg: #270504;
+    --clr-counter-on: #ff0800;
+   /* --clr-mouseover: linear-gradient(-15deg, #ECE7EE, #c7c4c9); */
+
+    /*  GAME */
+    --game-size: 48rem;
+    --game-border: 1.5rem solid var(--clr-border);
+}
+
+/**********************************/
+/* 1. TAGS
+/**********************************/
+
+html {
+    font-size: 62.5%
+}
+
+body {
+    background: linear-gradient( rgba(0, 0, 0, 0.5) 100%,
+     rgba(0, 0, 0, 0.5)100%),
+     url("https://1.bp.blogspot.com/-ImkuaBR60yY/YOmby7RgCnI/AAAAAAAAiq0/h_rhcKMhzkscvRwZWBFE5J8nQmMnieMCgCLcBGAsYHQ/s1920/GAMER-WALLPAPER-HD.png") no-repeat center;
+
+    font-family: 'Bungee', verdana, sans-serif;
+    overflow: hidden;
+}
+
+footer {
+    text-align: center;
+    margin-top: 1s5rem;
+    font-size: 1rem;
+}
+
+.canvas-particles {
+    opacity: 5.6;
+    transition: transform 0.4s ease;
+    z-index: -99;
+}
+
+/*  ANIMATIONS */
+
+@keyframes glow {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+@-webkit-keyframes blink-2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+ }
+
+@keyframes blink-2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@-webkit-keyframes tracking-in-contract-bck {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(400px);
+              transform: translateZ(400px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+}
+
+  @keyframes tracking-in-contract-bck {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(400px);
+              transform: translateZ(400px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+}
+
+/**********************************/
+/* 2. BODY
+/**********************************/
+
+.main-game {
+    width: var(--game-size);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#title {
+    /*  EFFECT */
+    font-family: 'Share Tech', sans-serif;
+    color: yellow;
+    text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+    animation:
+        glow 1.5s linear infinite,
+        tracking-in-contract-bck 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    -webkit-animation:
+        tracking-in-contract-bck 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both,
+        glow 1.5s linear infinite;
+    transition: font-size 0.2s;
+    transition-delay: 0.1s;
+    letter-spacing: 2rem;
+    cursor: default;
+
+
+    /*  TEXT */
+    text-align: center;
+    color:white;
+    text-transform: uppercase;
+    font-size: 5rem;
+}
+
+#title:hover{
+    transition: font-size 0.2s;
+    transition-delay: 0.1s;
+    font-size: 6rem;
+}
+
+#footer {
+    /* Content */
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+    display: block;
+    bottom: 0;
+    color: white;
+	-webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+/*******************************************/
+/* 3. GAME
+/*******************************************/
+
+.genius {
+    width: var(--game-size);
+    height: var(--game-size);
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+/*
+.genius__title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin: 0;
+    padding-left: 1.2rem;
+    padding-top: 4.7rem;
+  }
+
+  .reg {
+      font-family: verdana, sans-serif;
+      font-size: 1.8rem;
+      margin-left: -1rem;
+      vertical-align: top;
+  }
+  */
+
+/*******************************************/
+/* 3.1. COLORS
+/*******************************************/
+
+.genius__color {
+    width: calc(var(--game-size) / 2);
+    height: calc(var(--game-size) / 2);
+    border: var(--game-border);
+}
+
+    .genius__color--blue {
+        background: var(--clr-blue);
+        border-top-left-radius: 100%;
+        transition: 0.4s ease;
+    }
+
+    .genius__color--blue:hover {
+        transition: 0.2s ease;
+        box-shadow: inset 5rem 5rem 6rem rgba(255, 255, 255, 0.301);
+    }
+
+        .genius__color--blue.genius__color--active {
+            -webkit-animation: blink-2 0.3s ease-out 2 both;
+	        animation: blink-2 0.3s ease-out 2 both;
+        }
+
+    .genius__color--yellow {
+        background: var(--clr-yellow);
+        border-top-right-radius: 100%;
+    }
+
+    .genius__color--yellow:hover {
+        transition: 0.2s ease;
+        box-shadow: inset -5rem 5rem 6rem rgba(255, 255, 255, 0.301);
+    }
+
+        .genius__color--yellow.genius__color--active {
+            -webkit-animation: blink-2 0.3s ease-out 2 both;
+	        animation: blink-2 0.3s ease-out 2 both;
+        }
+
+    .genius__color--red {
+        background: var(--clr-red);
+        border-bottom-left-radius: 100%;
+    }
+
+    .genius__color--red.genius__color--active {
+        -webkit-animation: blink-2 0.3s ease-out 2 both;
+        animation: blink-2 0.3s ease-out 2 both;
+    }
+
+    .genius__color--red:hover {
+        transition: 0.2s ease;
+        box-shadow: inset 5rem -5rem 6rem rgba(255, 255, 255, 0.301);
+    }
+
+    .genius__color--green {
+        background: var(--clr-green);
+        border-bottom-right-radius: 100%;
+    }
+
+    .genius__color--green:hover {
+        transition: 0.2s ease;
+        box-shadow: inset -5rem -5rem 6rem rgba(255, 255, 255, 0.301);
+    }
+
+        .genius__color--green.genius__color--active {
+            -webkit-animation: blink-2 0.3s ease-out 2 both;
+	        animation: blink-2 0.3s ease-out 2 both;
+        }
+
+/*******************************************/
+/* 3.2. COUNT/START
+/*******************************************/
+
+.genius__options {
+    background-color: var(--clr-center);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    width: 14.5rem;
+    height: 9rem;
+    border: .3rem solid rgb(173, 173, 173);
+    border-radius: 2rem;
+}
+
+.group {
+    margin-right: 2rem;
+}
+
+.gui {
+    padding-left: 1.4rem;
+    padding-top: 1.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+}
+
+.gui__label {
+    font-family: 'Calibri';
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+.gui__btn {
+    box-shadow: 0 .2rem .4rem #222;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 5rem;
+    border: .3rem solid #444444;
+    cursor: pointer;
+}
+
+.gui__btn:active {
+    transform: translate(0, .3rem); /* faz com que o botão abaixe */
+    box-shadow: none;
+}
+
+.gui__btn--start {
+    background-color: rgb(226, 37, 37);
+}
+
+.gui__counter {
+    background-color: var(--clr-counter-bg);
+    color: rgb(172, 36, 36);
+    font-family: "Iceland", cursive;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    width: 5.5rem;
+    border: .3rem solid #292929;
+    border-radius: 1rem;
+    padding-right: .2rem;
+    padding-left: .3rem;
+    cursor: default;
+}
+
+.gui__counter--on {
+    color: var(--clr-counter-on);
+}
+
+@media (max-width: 600px) {
+    html {
+            font-size: 45%;
+    }
+}

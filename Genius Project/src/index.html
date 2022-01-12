@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/jpg" href="../favicon.ico"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script type="module" src="script.js"></script>
+        <script type="module" src="particles.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&family=Share+Tech&display=swap');
+        </style>
+        <title>Genius Game</title>
+    </head>
+    <body>
+        <div class="background">
+            <canvas class="canvas-particles" height="1125" width="1594"
+             style="left: 0px; top: 0px; position: absolute; height: 1125px; width: 1594px;">
+        </div>
+        <header>
+                <h1 id="title">Genius Game</h1>
+        </header>
+        <div class="genius__options">
+            <div class="gui">
+                <div class="group">
+                        <div class="gui__counter">--</div>
+                        <p class="gui__label">count</p>
+                </div> <!-- .group -->
+                <div class="group">
+                        <div class="gui__btn gui__btn--start"></div>
+                        <p class="gui__label">start</p>
+                </div> <!-- .group -->
+            </div> <!-- .gui -->
+        </div> <!-- .genius__options -->
+        <div class="main-game">
+            <div class="genius">
+                <div class="genius__color genius__color--blue"></div>
+                <div class="genius__color genius__color--yellow"></div>
+                <div class="genius__color genius__color--red"></div>
+                <div class="genius__color genius__color--green"></div>
+            </div> <!-- .genius -->
+        </div> <!-- .main-game -->
+        <footer>
+            <h2 id="footer">Powered by Keviny Teixeira for Eduzz Full Stack Developer Bootcamp!</h2>
+        </footer>
+    </body>
+</html>
