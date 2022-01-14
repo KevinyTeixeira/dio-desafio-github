@@ -1,0 +1,562 @@
+# 📚 ReactJS
+
+Aqui registrarei todos os conteúdos que eu considerar importante nessa disciplina, algo como um bloco de *"Anotações"* para que eu possa retornar futuramente caso considere necessário.
+
+
+
+## 📑 1. Conceituando o ReactJs
+
+**`React`**(**[site oficial](https://pt-br.reactjs.org/)**) não é um framework, mas sim uma **biblioteca JavaScript** para criar <u>interfaces de usuário</u>, entretanto muito poderosa. Essa biblioteca foi criada por *Jordan Walke* em 2011, enquanto trabalhava para o **Facebook**, cuja finalidade era resolver um problema com a manutenção do feed de notícias.
+
+A biblioteca foi super bem aceita e inovou especialmente a capacidade de reutilização do código, sendo logo em seguida replicada no **Instagram** (em 2012), em 2013 liberada para todo o público e em 2015 criado o **`React Native`**, focado para o desenvolvimento mobile. 
+
+
+
+## :diamond_shape_with_a_dot_inside: 2. Principais Características
+
+Porque o **`React`** está sendo tão usado atualmente? Existe um motivo para isso? **Claro que sim!** 
+
+Segundo o site do **[StackOverflow](https://insights.stackoverflow.com/survey/2021)** que faz pesquisas sobre as <u>linguagens mais utilizadas</u>, no momento em que escrevo isso (14/01/2022), **React.js é a linguagem mais utilizada no mercado** com **40.14%**, em segundo lugar o **jQuery** com **34.42%**!
+
+### 2.1 `JSX` (Opcional) :u6e80:
+
+​	O `JSX` é uma sintaxe do `React` que te permite usar `<html>` dentro de um componente do react. Meio louco né?! Mas o resultado final é que você usa `JavaScript` e `Html` praticamente juntos. Veja na prática o que quero dizer com isso.
+
+```react
+// SEM O JSX...
+class HelloMessage extends React.Component {
+  render() {
+    return React.createElement(
+      "div",
+      null,
+      "Ol\xE1, ",
+      this.props.name,
+      "!"
+    );
+  }
+}
+
+ReactDOM.render(React.createElement(HelloMessage, { name: "Taylor" }), document.getElementById('hello-example'));
+```
+
+```react
+// COM O JSX...
+class HelloMessage extends React.Component {
+  render() {
+    return (
+	// O React exige que a chamada dos elementos seja 'encapsulada', por isso utilizamos o <div>, mas não precisa necessariamente ser uma div.
+      <div> <!-- a partir daqui, é HTML -->
+        Olá, {this.props.name /* dentro das chaves, é JavaScript! */ }!
+		<!-- Para chamar uma função, variável, dentro do HTML é escrita dentro de chaves -->
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <HelloMessage name="Taylor" />,
+  document.getElementById('hello-example')
+);
+```
+
+### 2.2 `Linguagem Declarativa`:crown:
+
+​	O `React` só renderiza somente os componentes necessários na medida em que os dados mudam. Views declarativas fazem com que seu código seja mais previsível e simples de depurar.
+
+### 2.3 `Modular` :wrench:
+
+​	O `React` trabalha com **`componentes`**, isso significa que cada elemento é tido como um componente, que é invocado e ajustado na página principal. Para entender isso, imagine um botão, esse botão não é criado diretamente na página principal, ele é criado de forma simples e apartada para ser um componente, e então é invocado na página que o usará, para que seja exibida sob aspectos adicionais.
+
+​	Os componentes, são constantemente importados e exportados usando a declaração abaixo, e podem se tornar dinâmicos quando utilizados em conjunto com os **`props`**.
+
+```react
+@import ComponenteName from './caminho'
+
+/*
+	COMPONENTE
+*/
+
+export default ComponenteName
+```
+
+### 2.4 `Reutilizável`:recycle: 
+
+​	Uma vez que o `React` trabalha com componentes, percebe que um botão que foi criado, pode ser reutilizado em outros códigos? **Todo componente é reutilizável**!
+
+### 2.5 `Props`:baggage_claim:
+
+​	São chamados de **`props`** os valores passados para os **componentes**, que os recebem como argumentos daquele componente. Utilizando `props` nós somos capazes de mais do que reutilizar um componente, reutilizá-lo de forma dinâmica! Vamos verificar isso na prática:
+
+```react
+// EXEMPLO DE PROPS
+// Esse é um componente, nele usaremos outro componente chamado de SayMyName.js, que será dinâmico com a ajuda do props!
+
+// App.js
+@import SayMyName from './caminho'
+
+function App() {
+    
+    const nomeNoGlobal = "David";
+    
+    return (
+	// Chamamos o componente, e em seguida repassamos o parâmetro de props como argumento, que inclusive, pode ser reutilizado de várias formas.
+    <div>
+        <SayMyName name="Keviny" />
+        <SayMyName name="Keuvyn" />
+        <SayMyName name={nomeNoGlobal} />
+	</div>
+    )
+}
+```
+
+```react
+// EXEMPLO DE PROPS
+// Esse é o componente que está sendo importando para App.js!
+
+//SayMyName.js
+function SayMyName(props) {
+    
+    return (
+    <div>
+		<p>Fala aí {props.name}, suave?!</p>
+	</div>
+    )
+}
+```
+
+​	Outro ponto interessante para destacar acerca de `props` é o fato de não precisarmos utilizar essa expressão, a fim de simplificar nosso código. Para isso podemos usar o **Destructuring** já aprendido em JavaScript.
+
+```react
+// EXEMPLO DE PROPS SEM DESTRUCTURING
+
+function People(props) {
+    
+    return (
+    <div>
+		<img src={props.photo} alt={props.name} />
+		<h2>Name: {props.name}</h2>
+		<p>Age: {props.age}</p>
+		<p>Job: {props.job}</p>
+	</div>
+    )
+}
+```
+
+​	Perceba como fica verboso, tantos 'props' utilizados ao longo do componente? Agora veja como podemos fazer utilizando o **destructuring**:
+
+```react
+// EXEMPLO DE PROPS COM DESTRUCTURING
+function People({photo, name, age, job}) {
+    
+    return (
+    <div>
+		<img src={photo} alt={name} />
+		<h2>Name: {name}</h2>
+		<p>Age: {age}</p>
+		<p>Job: {job}</p>
+	</div>
+    )
+} // Bem melhor, em?!
+```
+
+### 2.6 `CSS no React`:tshirt:
+
+​	A **primeira coisa que você precisa saber**, é que para chamar uma classe dentro de um `html` no react, **não é com a palavra `class`**, mas sim com **`className`**. Isso acontece porque `class` é uma palavra reservada do `react`.
+
+​	**Segundo**, o `CSS` pode ser adicionado de **forma global** na aplicação, por meio do arquivo `index.css`. Porém, **é possível estilizar a nível de componentes** (utilizando uma coisa chamada de `CSS Modules`. Vamos a prática para entender:
+
+- CSS a **TODO O COMPONENTE**:
+
+```react
+@import './index.css' // não necessariamente esse nome...
+
+// Com esse import, o CSS será aplicado a todos os elementos desse componente, independente de haver outros componentes ou não, todos serão afeetados!
+```
+
+- CSS a um **COMPONENTE ESPECÍFICO**:
+
+​	Vamos colocar um adendo aqui antes, lembra do `props` que torna um componente dinâmico? Então, para o CSS, por convenção, usamos **`styles`**, cujos elementos a ele associados poderão ser invocados nos elementos `<html>`. Vamos conferir:
+
+```react
+@import styles from './CssDoComponente.css' // Por convenção, o nome poderia ser 'Componente.module.css', o qual deve ficar na mesma pasta dos componentes.
+
+// Suponha que nosso arquivo 'CssDoComponente.css' já possua dois estilos .container{} e .content{}
+
+function Frase() {
+    return (
+    <div className = {styles.container}>
+	<p className = {styles.content}>Este é um componente com uma frase!</p>
+	</div>
+    )
+}
+
+// Dessa forma, esse componente específico tem suas propriedades alteradas segundo seus 'styles' adicionados.
+```
+
+### 2.7 Gera uma `SPA` :globe_with_meridians:
+
+​	Essa é uma característica importante, e super interessante do `React`. Ele **compila todas as páginas, em um único `Index.html`**, removendo a necessidade de existir vários arquivos `<html>`, cada um para sua própria página. Essa característica é conhecida como **Single Page Application - SPA**.
+
+## :rocket: 3. React INIT
+
+Para **inicializar** o `React` o facebook disponibiliza uma ferramenta que prepara todo o "pano de fundo" pra você automaticamente, o nome dessa ferramenta é **`create-react-app`**. Para acionar esse script, você precisará utilizar ou **`npm`**, ou **`yarn`**. Em tese eu não saberia o que esses nomes significam nesse momento, mas já pesquisei sobre eles antes mesmo que chegasse as suas respectivas disciplinas aqui na DIO, esses empacotadores serão responsáveis por executar o script do `creat-react-app`.
+
+Para esse guia, vamos usar o `npm`, o qual é instalado juntamente com o **`Node.js`**. Se você não possui na sua máquina, instale esses programas: **Node.js**, **Visual Studio Code**; 
+
+- **1º Checar os pré-requisitos:** No **Visual Studio Code**, no terminal do **PowerShell**, utilize os comandos **`node-v`** e **`npm-v`** para checar se o Node e o Npm estão devidamente instalados. Se estiver tudo certo, aparecerá seus números de versões;
+- **2º Creat-react-app:** tudo certo, agora no terminal, use o código **`npx create-react-app nome-projeto`**;
+- **3º NPM Start:** se tudo correu bem, você deve ter recebido uma mensagem com "**Success**!". Agora, lembre-se desse comando: **`npm start`**; é responsável por executar um script que "liga" seu servidor do `React`, para que você possa acessá-lo no navegador. Detalhe, esse comando só pode ser executado dentro da pasta do projeto.
+- **4º Programar:** agora é só programar. Consulte [esse vídeo](https://www.youtube.com/watch?v=Jg6JaEjovJk&list=PLnDvRpP8BneyVA0SZ2okm-QBojomniQVO&index=2&ab_channel=MatheusBattisti-HoradeCodar) para entender o que são todos esses componentes que essa configuração inicial do react trouxe para você.
+
+### **3.1 Empacotador de Código :currency_exchange:**
+
+​	Eis um assunto importante, as soluções de **empacotadores de código**! Existem várias, mas as mais utilizadas são **`Webpack`, `Parcel`** e **`Holap`**. O `Webpack` é mais indicado para grandes aplicações, o `Holap` para bibliotecas e o `Parcel` para aplicações mais simples.
+
+​	O **método de instalação** desses empacotadores é semelhante ao `React`, basta você instalar utilizando o `npm install`. Consulte o site das ferramentas para ter instruções mais concretas.
+
+​	Os **modbundlers** apesar de diferentes, possuem características em comum. Criam um **arquivo de configuração**, para que você configure como o empacotador tratará o seus arquivos quando acionado. Vamos utilizar o `Webpack` como exemplo, cujo arquivo de configuração tem por nome `webpack.config.js`:
+
+```javascript
+const path = require('path') // requisitamos o diretório deste arquivo.
+
+module.exports = { // esse é um comando do Node.js, utilizando essa expressão permite que o node o execute.
+    devtool: 'source-map',
+    entry: './nomeDoArquivoDeEntrada.js', // Aqui definimos o arquivo de entrada, ou seja, o arquivo principal da aplicação
+    output: {
+    	path: path.resolve(__dirname, 'dist'), // Aqui configuramos o caminho de saída dos arquivos empacotados. '__dirname' referece a pasta em questão e 'dist' é o nome da pasta que será criada dentro.
+		filename: 'bundler.js' // E finalmente, o nome do arquivo empacotado
+	}
+}
+```
+
+### **3.2 Package.json:trident:**
+
+​	Sem saber qual a utilidade desse arquivo, você não entenderá a relação dele com todas as configurações do projeto, em especial como ele interage com os **modbundlers**. É exatamente nas dependências (*dependencies*), que o modbundler é listado assim que instalado. Para consultar de forma completa, [acesse aqui](https://www.luiztools.com.br/post/o-guia-completo-do-package-json-do-node-js/).
+
+​	O **`package.json`** é uma espécie de manifesto do seu projeto. Ele pode fazer várias coisas, completamente não relacionadas. Ele é um repositório central de configurações de ferramentas, por exemplo. Ele também é onde npm armazena os nomes e versões dos pacotes instalados. Vamos analisar um arquivo `package.json` e o que suas declarações implicam:
+
+```json
+{
+    "name": "test-project", // O nome do nosso Projeto
+    "version": "1.0.0", // A versão atual do nosso Projeto
+    "description": "A Node.js project", // Uma breve descrição
+    "main": "src/index.js", // o ponto de entrada da aplicação (lembra do 'entry' lá em 'modbundler'?!)
+    "private": true, // true, previne que sua aplicação seja publicada acidentalmente no npm
+    "scripts": { // define um conjunto de 'scripts' node para executar com o comando 'npm run "script"'
+        "dev": "nodemon ./src/index",
+        "start": "node ./src/index",
+        "test": "jest",
+        "compile": "tsc"
+    },
+    "dependencies": { // define uma lista de pacotes npm a serem instalados pra ambos os ambientes (produção/desenvolvimento)
+        "axios": "^0.21.1",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "joi": "^17.3.0",
+        "pg": "^8.5.1",
+        "sequelize": "^6.4.0",
+        "uuid": "^8.3.2",
+        "winston": "^3.3.3"
+    },
+    "devDependencies": { // define uma lista de pacotes npm instalados como dependências do desenvolvimento
+        "jest": "^26.6.3",
+        "nock": "^13.0.5",
+        "nodemon": "^2.0.6",
+        "sequelize-mock-v5": "^1.2.0",
+        "webpack": "^4.35.3" // Olha o Webpack aqui!
+        "webpack-cli": "^3.3.5"
+    },
+    "engines": { // Define quais versões de Node.js e outros comandos que este pacote ou aplicação suporta
+        "node": ">= 6.0.0",
+        "npm": ">= 3.0.0"
+    }
+    
+// O arquivo package.json também pode hospedar configurações de comandos específicos, por exemplo Babel, ESLint, e muito mais.
+}
+```
+
+​	Mas e o **`package-lock.json`**? É de fato plausível seu questionamento, ele define as versões instaladas de cada pacote de maneira irreversível e o npm usará exatamente estas versões quando você rodar npm install.
+
+Este conceito não é novo e outros gerenciadores de pacotes de linguagens de programação (como o `Composer` do `PHP`) usam um sistema semelhante por anos.
+
+O arquivo `package-lock.json` **precisa ser commitado no `Git`** para que possa ser baixado por outras pessoas. E se precisar atualizar as versões das dependências no package-lock.json, basta rodar npm update.
+
+### **3.3 EsLint :heavy_check_mark:**
+
+​	Apenas para conhecimento, o [**EsLint**](https://eslint.org/) é uma ferramenta de análise de código que pode ser instalada utilizando `npm`, ela serve para que, ao trabalhar em equipe os envolvidos "conversem a mesma língua ao desenvolver". Então basicamente, você define os parâmetros de desenvolvimento, como **identação**, se deve existir **ponto e vírgula** ao final de cada linha ou não, quantidade de **backspaces** a cada linha, se deve usar **Arrow Functions ou Functions Normais**, entre outros! 
+
+​	Essas configurações, são refletidas em **tempo de desenvolvimento**, ou seja, o desenvolvedor receberá **alertas** quando um critério não for atendido.
+
+##  :hotsprings:4. React Programmer
+
+Finalmente, vamos começar a de fato programar, com várias implementações práticas e observações acerca de seus comportamentos.
+
+### **4.1 Renderização Condicional**
+
+​	No tópico 2, pudemos observar um pouco de como os componentes funcionam no `React`, vimos que esses componentes podem ser importados/exportados conforme desejar, e mais importante, utilizá-los à vontade em qualquer componente com ajustes específicos, possibilitados pelo uso dos `props`. Abaixo, vamos conferir o que são '**elementos**':
+
+```react
+// VARIÁVEIS DE ELEMENTOS
+// 1. O que são ELEMENTOS no REACT?
+
+import React from "react";
+
+// No react, um ELEMENTO é um simples objeto descrevendo o que você quer que apareça na UI em termos de nó DOM e outros componentes. Elementos podem conter outros elementos nas suas props.
+const buttonA = <button>Primeiro Botão</button> // 1º Elemento
+const buttonB = <button>Segundo Botão</button> // 2º Elemento
+      
+// Elementos, podem ser utilizados de forma semelhante a variáveis ou funções, somente "invocando-as" entre as chaves.
+      
+const App = () => {
+    return (
+    <div>
+	<p>Digital Innovation One</p>
+	<p>Bem vindo!</p>
+	{buttonA}
+	{buttonB}
+	</div>
+    );
+};
+
+export default App;
+```
+
+```react
+// IF INLINE COM O OPERADOR LÓGIO
+// 2. Como aplicar uma CONDIÇÃO a um ELEMENTO?
+
+import React from "react";
+
+// É muito comum ter condições no código, que dizem quando um elemento deve ser apresentado ou não, isso é o que significa a linguagem declarativa.
+
+// É importante observar, que ao ser negada sua exibição na UI, o código literalmente nem é visto na página.
+
+const buttonA = <button>Histórico dos Clientes</button> // 1º Elemento
+
+const hasCustomer = true; // Possui clientes?
+
+const App = () => {
+    return (
+    <div>
+	<p>O botão só aparecerá, se "Houver Clientes"</p>
+	{hasCustomer && ( // Esse é o 'if inline', utilizando o operador lógico '&&'
+		<div>
+		Clique no botão abaixo para visualizar o histórico de clientes
+		<br />
+		{buttonA}
+		</div>
+	)}
+	</div>
+    );
+};
+
+export default App;
+```
+
+```react
+// IF-ELSE INLINE COM O OPERADOR CONDICIONAL
+// 3. E se a condição não for atendida, é possível exibir outra coisa no lugar?
+
+import React from "react";
+
+const buttonA = <button>Histórico dos Clientes</button> // 1º Elemento
+const buttonB = <button>Cadastrar Cliente</button> // 2º Elemento
+const hasCustomer = false; // Possui clientes?
+
+const App = () => {
+    return (
+    <div>
+	<p>O botão só aparecerá, se "Houver Clientes"</p>
+	{hasCustomer ? ( // O '?', verifica se existe o botão 'hasCustomer' 
+		<div>
+		Clique no botão abaixo para visualizar o histórico de cliente:
+		<br />
+		{buttonA}
+		</div>
+	) /* Se não... */ : (
+		<div>
+			Clique abaixo para cadastrar um cliente:
+			<br />
+			{buttonB}
+		</div>
+	</div>
+    );
+};
+
+export default App;
+```
+
+```react
+// 4. Há como organizar melhor esse código? Organize os renders em Arrow Functions
+
+import React from "react";
+
+const buttonA = <button>Histórico dos Clientes</button> // 1º Elemento
+const buttonB = <button>Cadastrar Cliente</button> // 2º Elemento
+const hasCustomer = false; // Possui clientes?
+
+const App = () => {
+       
+	const renderShowHistory = () => (
+		<div>
+			Clique no botão abaixo para visualizar o histórico de cliente:
+			<br />
+			{buttonA}
+		</div>    
+	)
+    
+    const renderAddCustomer = () => (
+		<div>
+			Clique abaixo para cadastrar um cliente:
+			<br />
+			{buttonB}
+		</div>
+	)
+        
+	return (
+        <div>
+            <p>O botão só aparecerá, se "Houver Clientes"</p>
+            <!-- Se existe 'hasCustomer' render 'ShowHistory', se não, render 'AddCustomer'-->
+            {hasCustomer ? renderShowHistory() : renderAddCustomer()}
+        </div>
+    );
+};
+
+export default App;
+```
+
+```react
+// EVITANDO QUE UM COMPONENTE SEJA RENDERIZADO
+// 5. E como evitar que um componente seja renderizado?
+
+import React from "react";
+
+const App = () => {
+
+    const showCustomer = () => {
+        
+        // Ao retornar null, o React não renderiza o elemento
+        if (!hasCustomer) return null // leia-se 'se não existir Customer', retornar nulo
+        
+        return (
+        	<div>
+            	<h1>Nome do Cliente: Keviny Teixeira</h1>
+            </div>
+        )
+    }
+	return (
+        <div>
+			{hasCustomer ?} <!-- ?? -->
+			{ShowCustomer()}
+        </div>
+    );
+};
+
+export default App;
+```
+
+### **4.2 Lista e Chaves**
+
+​	Content...
+
+```react
+// RENDERIZANDO MÚLTIPLOS COMPONENTES
+// 1. Como renderizar vários nomes no react?
+
+import React from "react";
+
+const customer = [ // Criando um Array de elementos
+    {
+        id: 1,
+        name: 'Keviny Teixeira'
+    },
+    {
+        id: 2,
+        name: 'Keuvyn Teixeira'
+    },
+    {
+        id: 3,
+        name: 'José Ciclano'
+    },
+    {
+        id: 4,
+        name: 'Fulano de Tal'
+    },
+      
+const App = () => {
+    
+    const renderCustomers = (customer) => {
+        return (
+			<li>{customer.name}</li>
+        )
+	}
+    
+    return (
+    <div>
+		<ul>
+		<!-- Para iterar em cima de uma lista no react, usamos o método .map (do JavaScript) e passamos como parâmetro o que será iterado. -->
+		{listCustomer.map(renderCustomers)}
+		</ul>
+	</div>
+    );
+};
+
+export default App;
+```
+
+```react
+// CHAVES
+// 2. O React está lhe entregando um erro na lista, dizendo que cada item da lista deve possuir uma 'key'
+
+import React from "react";
+
+const customer = [
+    {
+        id: 1,
+        name: 'Keviny Teixeira'
+    },
+    {
+        id: 2,
+        name: 'Keuvyn Teixeira'
+    },
+    {
+        id: 3,
+        name: 'José Ciclano'
+    },
+    {
+        id: 4,
+        name: 'Fulano de Tal'
+    },
+      
+const App = () => {
+    
+    // O React exige que passemos uma 'chave' para cada elemento, por isso, desta vez vamos adicionar um index como argumento!
+    const renderCustomers = (customer, index) => {
+        return (
+			<li key={index}>{customer.name}</li>
+        )
+	}
+    
+    return (
+    <div>
+		<ul>
+		{listCustomer.map(renderCustomers)}
+		</ul>
+	</div>
+    );
+};
+
+export default App;
+```
+
+```react
+// EXTRAINDO COMPONENTES COM CHAVES
+// 3. ###
+```
+
+```react
+// CHAVES DEVEM SER ÚNICAS APENAS ENTRE ELEMENTOS IRMÃOS
+// 4. ###
+```
+
