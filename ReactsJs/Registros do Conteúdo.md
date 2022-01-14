@@ -22,7 +22,7 @@ Segundo o site do **[StackOverflow](https://insights.stackoverflow.com/survey/20
 
 ​	O `JSX` é uma sintaxe do `React` que te permite usar `<html>` dentro de um componente do react. Meio louco né?! Mas o resultado final é que você usa `JavaScript` e `Html` praticamente juntos. Veja na prática o que quero dizer com isso.
 
-```react
+```javascript
 // SEM O JSX...
 class HelloMessage extends React.Component {
   render() {
@@ -39,7 +39,7 @@ class HelloMessage extends React.Component {
 ReactDOM.render(React.createElement(HelloMessage, { name: "Taylor" }), document.getElementById('hello-example'));
 ```
 
-```react
+```javascript
 // COM O JSX...
 class HelloMessage extends React.Component {
   render() {
@@ -69,7 +69,7 @@ ReactDOM.render(
 
 ​	Os componentes, são constantemente importados e exportados usando a declaração abaixo, e podem se tornar dinâmicos quando utilizados em conjunto com os **`props`**.
 
-```react
+```javascript
 @import ComponenteName from './caminho'
 
 /*
@@ -87,7 +87,7 @@ export default ComponenteName
 
 ​	São chamados de **`props`** os valores passados para os **componentes**, que os recebem como argumentos daquele componente. Utilizando `props` nós somos capazes de mais do que reutilizar um componente, reutilizá-lo de forma dinâmica! Vamos verificar isso na prática:
 
-```react
+```javascript
 // EXEMPLO DE PROPS
 // Esse é um componente, nele usaremos outro componente chamado de SayMyName.js, que será dinâmico com a ajuda do props!
 
@@ -109,7 +109,7 @@ function App() {
 }
 ```
 
-```react
+```javascript
 // EXEMPLO DE PROPS
 // Esse é o componente que está sendo importando para App.js!
 
@@ -126,7 +126,7 @@ function SayMyName(props) {
 
 ​	Outro ponto interessante para destacar acerca de `props` é o fato de não precisarmos utilizar essa expressão, a fim de simplificar nosso código. Para isso podemos usar o **Destructuring** já aprendido em JavaScript.
 
-```react
+```javascript
 // EXEMPLO DE PROPS SEM DESTRUCTURING
 
 function People(props) {
@@ -144,7 +144,7 @@ function People(props) {
 
 ​	Perceba como fica verboso, tantos 'props' utilizados ao longo do componente? Agora veja como podemos fazer utilizando o **destructuring**:
 
-```react
+```javascript
 // EXEMPLO DE PROPS COM DESTRUCTURING
 function People({photo, name, age, job}) {
     
@@ -167,7 +167,7 @@ function People({photo, name, age, job}) {
 
 - CSS a **TODO O COMPONENTE**:
 
-```react
+```javascript
 @import './index.css' // não necessariamente esse nome...
 
 // Com esse import, o CSS será aplicado a todos os elementos desse componente, independente de haver outros componentes ou não, todos serão afeetados!
@@ -177,7 +177,7 @@ function People({photo, name, age, job}) {
 
 ​	Vamos colocar um adendo aqui antes, lembra do `props` que torna um componente dinâmico? Então, para o CSS, por convenção, usamos **`styles`**, cujos elementos a ele associados poderão ser invocados nos elementos `<html>`. Vamos conferir:
 
-```react
+```javascript
 @import styles from './CssDoComponente.css' // Por convenção, o nome poderia ser 'Componente.module.css', o qual deve ficar na mesma pasta dos componentes.
 
 // Suponha que nosso arquivo 'CssDoComponente.css' já possua dois estilos .container{} e .content{}
@@ -296,7 +296,7 @@ Finalmente, vamos começar a de fato programar, com várias implementações pr�
 
 ​	No tópico 2, pudemos observar um pouco de como os componentes funcionam no `React`, vimos que esses componentes podem ser importados/exportados conforme desejar, e mais importante, utilizá-los à vontade em qualquer componente com ajustes específicos, possibilitados pelo uso dos `props`. Abaixo, vamos conferir o que são '**elementos**':
 
-```react
+```javascript
 // VARIÁVEIS DE ELEMENTOS
 // 1. O que são ELEMENTOS no REACT?
 
@@ -322,7 +322,7 @@ const App = () => {
 export default App;
 ```
 
-```react
+```javascript
 // IF INLINE COM O OPERADOR LÓGIO
 // 2. Como aplicar uma CONDIÇÃO a um ELEMENTO?
 
@@ -354,7 +354,7 @@ const App = () => {
 export default App;
 ```
 
-```react
+```javascript
 // IF-ELSE INLINE COM O OPERADOR CONDICIONAL
 // 3. E se a condição não for atendida, é possível exibir outra coisa no lugar?
 
@@ -426,7 +426,7 @@ const App = () => {
 export default App;
 ```
 
-```react
+```javascript
 // EVITANDO QUE UM COMPONENTE SEJA RENDERIZADO
 // 5. E como evitar que um componente seja renderizado?
 
@@ -458,9 +458,7 @@ export default App;
 
 ### **4.2 Lista e Chaves**
 
-​	Content...
-
-```react
+```javascript
 // RENDERIZANDO MÚLTIPLOS COMPONENTES
 // 1. Como renderizar vários nomes no react?
 
@@ -505,9 +503,11 @@ const App = () => {
 export default App;
 ```
 
-```react
+```javascript
 // CHAVES
-// 2. O React está lhe entregando um erro na lista, dizendo que cada item da lista deve possuir uma 'key'
+// 2. O React está lhe entregando um erro na lista, dizendo que cada item da lista deve possuir uma 'key'.
+
+// Observação: as chaves devem ser únicas apenas entre elementos irmãos
 
 import React from "react";
 
@@ -531,10 +531,10 @@ const customer = [
       
 const App = () => {
     
-    // O React exige que passemos uma 'chave' para cada elemento, por isso, desta vez vamos adicionar um index como argumento!
+    // O React exige que passemos uma 'chave' para cada elemento, por isso, desta vez vamos fornecer uma id por item!
     const renderCustomers = (customer, index) => {
         return (
-			<li key={index}>{customer.name}</li>
+			<li key={`customer-${customer.id}`}>{customer.name}</li>
         )
 	}
     
@@ -550,13 +550,111 @@ const App = () => {
 export default App;
 ```
 
-```react
-// EXTRAINDO COMPONENTES COM CHAVES
-// 3. ###
+### 4.3 Manipulando Eventos
+
+​	Manipular eventos em elementos React é muito semelhante a manipular eventos em elementos do DOM. Existem algumas diferenças sintáticas:
+
+- **Eventos** em React são nomeados usando **camelCase** ao invés de letras maiúsculas.
+- Com o **`JSX`** você passa uma **função como manipulador** de eventos ao invés de um texto.
+
+Vamos ver como funciona na prática:
+
+```javascript
+// CRIANDO UM EVENTO
+// 1. vamos receber um click!
+
+import React from "react";
+
+const showEvent = () => console.log("Evento clidado!");
+
+// 'onClick', representa o evento em sí. E como dito anteriormente, nós passamos uma função como manipulador, nesse caso, o 'showEvent'
+const Button = <button onClick={showEvent}>Mostrar evento</button>
+
+const App = () => {
+    
+    return (
+        <div>
+            {Button}
+        </div>
+    );
+};
+
+export default App;
 ```
 
-```react
-// CHAVES DEVEM SER ÚNICAS APENAS ENTRE ELEMENTOS IRMÃOS
-// 4. ###
+```javascript
+// CRIANDO OUTRO EVENTO
+// 2. Ao receber um click, exibir um nome!
+
+import React from "react";
+
+const App = () => {
+	
+    const name = 'Digital Innovation One';
+    
+	const showEvent = () => {
+        console.log('Evento clicado!');
+		alert(name); // A variável name está funcionando aqui, porque ao utilizarmos Arrow Function, showEvent me permite utilizar a variável do escopo de App()
+    }
+
+	const Button = <button onClick={showEvent}>Mostrar evento</button>
+    
+    return (
+        <div>
+            {Button}
+        </div>
+    );
+};
+
+export default App;
 ```
 
+```javascript
+// CRIANDO MAIS UM EVENTO
+// 3. Utilizando-se do exemplo da renderização de múltiplos nomes, observados nos exemplos anteriores, vamos criar um botão que remova nome a nome!
+
+import React from "react";
+
+const customer = [
+    {
+        id: 1,
+        name: 'Keviny Teixeira'
+    },
+    {
+        id: 2,
+        name: 'Keuvyn Teixeira'
+    },
+    {
+        id: 3,
+        name: 'José Ciclano'
+    },
+    {
+        id: 4,
+        name: 'Fulano de Tal'
+    },
+      
+const App = () => {
+    
+	const handleClick = (id) => {
+        console.log('Deletar cliente');
+    }
+    
+    const renderCustomers = (customer, index) => {
+        return ( // vamos utilizar a 'customer.id', para que no clique, chame a função 'handleClick' passando como parâmetro a id
+			<div key={`customer-${customer.id}`}>
+				<li>{customer.name} <button onClick={handleClick(customer.id)}>Deletar Cliente X	 </button></li>
+			</div>
+        )
+	}
+    
+    return (
+    <div>
+		<ul>
+            {listCustomer.map(renderCustomers)}
+		</ul>
+	</div>
+    );
+};
+
+export default App;
+```

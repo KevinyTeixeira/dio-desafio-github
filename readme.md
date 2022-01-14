@@ -71,8 +71,8 @@ Abaixo, todas as atividades do **Bootcamp Eduzz Fullstack**:
 - [x] ~~Resolvendo Desafios de Código em JavaScript~~;
 - [x] ~~Desafios iniciais em **JavaScript**~~;
 - [x] ~~Criando seu jogo de memória estilo Genius~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/geniusproject-fromdio) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/12.%20Criando%20seu%20jogo%20de%20mem%C3%B3ria%20estilo%20Genius.pdf) | :video_game: [[**Genius Game**]](https://kevinyteixeira.github.io/geniusproject-fromdio/)
-- [ ] Introdução ao **ReactJS**; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**]()
-- [ ] Trabalhando com Componentes em React;
+- [x] ~~Introdução ao **ReactJS**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**]()
+- [ ] Trabalhando com Componentes em React; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**]()
 - [ ] Desenvolvimento de aplicações para internet com ReactJS;
 - [ ] Práticas avançadas em projetos com ReactJS;
 - [ ] Introdução aos **React Hooks**;
