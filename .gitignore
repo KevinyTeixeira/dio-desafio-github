@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+ReactsJs/dio-learning-project/node_modules/
+ReactsJs/dio-learning-project/.pnp
+ReactsJs/dio-learning-project/.pnp.js
+
+# testing
+ReactsJs/dio-learning-project/coverage
+
+# production
+ReactsJs/dio-learning-project/build
+
+# misc
+ReactsJs/dio-learning-project/.DS_Store
+ReactsJs/dio-learning-project/.env.local
+ReactsJs/dio-learning-project/.env.development.local
+ReactsJs/dio-learning-project/.env.test.local
+ReactsJs/dio-learning-project/.env.production.local
+
+ReactsJs/dio-learning-project/npm-debug.log*
+ReactsJs/dio-learning-project/yarn-debug.log*
+ReactsJs/dio-learning-project/yarn-error.log*
