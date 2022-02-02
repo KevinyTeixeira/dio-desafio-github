@@ -11,7 +11,7 @@
 - :books: **4. [Práticas Avançadas em Projetos com ReactJs](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/4.%20Pr%C3%A1ticas%20Avan%C3%A7adas%20em%20Projetos%20com%20ReactJs.md)**;
   - `Principais conteúdos:` ciclo de vida, react hooks, fragments, error boundaries, render props, typechecking, refs, dumb components, smart components, estrutura de projeto;
 - :books: **5. [Quotes Project - Introdução ao React Hooks](https://github.com/KevinyTeixeira/quotesproject-fromdio)**;
-  - `Principais conteúdos:` criação do repositório para o '**quotes project**', responsável por fornecer frases motivacionais de forma aleatória;
+  - `Principais conteúdos:` criação de uma aplicação `React`, que será publicado por meio do novo repositório '[**quotes-project-fromdio**'](https://github.com/KevinyTeixeira/quotesproject-fromdio). A aplicação fornecerá frases motivacionais de forma aleatória;
 
 - :books: **6. [Criando um Front-end Totalmente Componentizado na prática com ReactJS]()**
   - `Principais conteúdos:` ...;
