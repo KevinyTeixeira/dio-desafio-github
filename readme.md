@@ -4,6 +4,45 @@ Repositório criado para o desafio de projeto, incluir todas as atividades da [D
 
 
 
+## :bookmark_tabs:Atividades
+
+Abaixo, todas as atividades do **Bootcamp Eduzz Fullstack**:
+
+- [x] ~~Boas-vindas ao **Bootcamp Eduzz Fullstack Developer**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/1.%20Boas-vindas%20ao%20Bootcamp%20Eduzz%20Fullstack%20Developer.pdf)
+- [x] ~~Bem-vindo à **DIO**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/2.%20Bem-vindo%20%C3%A0%20DIO%20-%20Digital%20Innovation%20One.pdf)
+- [x] ~~Projetos ágeis com **SCRUM**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/3.%20Projetos%20%C3%A1geis%20com%20SCRUM.pdf)
+- [x] ~~**Lógica de Programação** Essencial~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/4.%20L%C3%B3gica%20de%20Programa%C3%A7%C3%A3o%20Essencial.pdf)
+- [x] ~~Introdução ao **Git e ao Github**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/5.%20Introdu%C3%A7%C3%A3o%20ao%20Git%20e%20ao%20Github.pdf)
+- [x] ~~Criando seu primeiro **repositório no Github** para compartilhar seu progresso~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/6.%20Criando%20seu%20Primeiro%20Reposit%C3%B3rio%20no%20Github%20para%20Compartilhar%20Seu%20Progresso.pdf)
+- [x] ~~Introdução a criação de websites com **HTML5 e CSS3**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Introdu%C3%A7%C3%A3o%20a%20cria%C3%A7%C3%A3o%20de%20websites%20com%20HTML5%20e%20CSS3/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/7.%20Introdu%C3%A7%C3%A3o%20a%20Cria%C3%A7%C3%A3o%20de%20Websites%20com%20HTML5%20e%20CSS3.pdf)
+- [x] ~~**JavaScript ES6** essencial~~;  :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/JavaScript%20ES6%20Essencial/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/8.%20JavaScript%20ES6%20essencial.pdf)
+- [x] ~~Desenvolvimento **avançado com JavaScript ES6**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/JavaScript%20ES6%20Essencial/JavaScript%20ES6%20Avan%C3%A7ado.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/9.%20Desenvolvimento%20Avan%C3%A7ado%20com%20JavaScript%20ES6.pdf)
+- [x] ~~Introdução ao **TypeScript**: Explorando Classes, Tipos e Interfaces~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/TypeScript/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/10.%20Introdu%C3%A7%C3%A3o%20ao%20TypeScript.pdf)
+- [x] ~~Resolvendo **Desafios de Código** em **JavaScript**~~;
+- [x] ~~Desafios iniciais em **JavaScript**~~;
+- [x] ~~Criando seu jogo de memória estilo **Genius**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/geniusproject-fromdio) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/12.%20Criando%20seu%20jogo%20de%20mem%C3%B3ria%20estilo%20Genius.pdf) | :video_game: [[**Genius Game**]](https://kevinyteixeira.github.io/geniusproject-fromdio/)
+- [x] ~~Introdução ao **ReactJS**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/13.%20Introdu%C3%A7%C3%A3o%20ao%20ReactJs.pdf)
+- [x] ~~Trabalhando com **Componentes em React**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/14.%20Trabalhando%20com%20Componentes%20em%20React.pdf)
+- [x] ~~Desenvolvimento de **aplicações para internet** com **ReactJS**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/15.%20Desenvolvimento%20de%20Aplica%C3%A7%C3%B5es%20para%20Internet%20com%20ReactJs.pdf)
+- [x] ~~**Práticas avançadas** em projetos com **ReactJS**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/16.%20Pr%C3%A1ticas%20Avan%C3%A7adas%20em%20Projetos%20com%20ReactJs.pdf)
+- [ ] Introdução aos **React Hooks**; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**]()
+- [ ] Criando aplicações móveis multiplataforma com **React Native**;
+- [ ] Desafios Básicos de JavaScript
+- [ ] Criando um front-end totalmente componentizado na prática com ReactJS
+- [ ] **MySql** - Trabalhando com as suas primeiras tabelas
+- [ ] Introdução ao **MongoDB** e Banco de Dados **NoSQL**;
+- [ ] Introdução ao **Node.js** com JavaScript;
+- [ ] Explorando o Estilo Arquitetural **REST** com Node.js;
+- [ ] Node.js com Banco de Dados Relacionais (SQL);
+- [ ] Microsserviços e Integrações com Node.js;
+- [ ] Desafios Médios em JavaScript;
+- [ ] Construindo Encurtador de URL;
+- [ ] Fundamentos de Arquitetura de Sistemas;
+- [ ] Introdução a orquestração de contêiners com **Docker**;
+- [ ] Introdução prática a computação em nuvem usando **AWS**;
+
+
+
 ## :key:Algumas Coisas Importantes
 
 1. Comandos importantes do *Prompt de Comando* (também utilizado no Git):
@@ -53,40 +92,3 @@ Repositório criado para o desafio de projeto, incluir todas as atividades da [D
 
    - **Typora** - [clique aqui para baixar o Typora](https://typora.io);
    - Lista completa de **[emoticons](https://gist.github.com/rxaviers/7360908)**:skull::smiley::collision:;
-
-## :bookmark_tabs:Atividades
-
-Abaixo, todas as atividades do **Bootcamp Eduzz Fullstack**:
-
-- [x] ~~Boas-vindas ao **Bootcamp Eduzz Fullstack Developer**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/1.%20Boas-vindas%20ao%20Bootcamp%20Eduzz%20Fullstack%20Developer.pdf)
-- [x] ~~Bem-vindo à **DIO**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/2.%20Bem-vindo%20%C3%A0%20DIO%20-%20Digital%20Innovation%20One.pdf)
-- [x] ~~Projetos ágeis com **SCRUM**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/3.%20Projetos%20%C3%A1geis%20com%20SCRUM.pdf)
-- [x] ~~**Lógica de Programação** Essencial~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/4.%20L%C3%B3gica%20de%20Programa%C3%A7%C3%A3o%20Essencial.pdf)
-- [x] ~~Introdução ao **Git e ao Github**~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/5.%20Introdu%C3%A7%C3%A3o%20ao%20Git%20e%20ao%20Github.pdf)
-- [x] ~~Criando seu primeiro **repositório no Github** para compartilhar seu progresso~~; :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/6.%20Criando%20seu%20Primeiro%20Reposit%C3%B3rio%20no%20Github%20para%20Compartilhar%20Seu%20Progresso.pdf)
-- [x] ~~Introdução a criação de websites com **HTML5 e CSS3**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Introdu%C3%A7%C3%A3o%20a%20cria%C3%A7%C3%A3o%20de%20websites%20com%20HTML5%20e%20CSS3/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/7.%20Introdu%C3%A7%C3%A3o%20a%20Cria%C3%A7%C3%A3o%20de%20Websites%20com%20HTML5%20e%20CSS3.pdf)
-- [x] ~~**JavaScript ES6** essencial~~;  :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/JavaScript%20ES6%20Essencial/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/8.%20JavaScript%20ES6%20essencial.pdf)
-- [x] ~~Desenvolvimento **avançado com JavaScript ES6**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/JavaScript%20ES6%20Essencial/JavaScript%20ES6%20Avan%C3%A7ado.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/9.%20Desenvolvimento%20Avan%C3%A7ado%20com%20JavaScript%20ES6.pdf)
-- [x] ~~Introdução ao **TypeScript**: Explorando Classes, Tipos e Interfaces~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/TypeScript/Registros%20do%20Conte%C3%BAdo.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/10.%20Introdu%C3%A7%C3%A3o%20ao%20TypeScript.pdf)
-- [x] ~~Resolvendo **Desafios de Código** em **JavaScript**~~;
-- [x] ~~Desafios iniciais em **JavaScript**~~;
-- [x] ~~Criando seu jogo de memória estilo **Genius**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/geniusproject-fromdio) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/12.%20Criando%20seu%20jogo%20de%20mem%C3%B3ria%20estilo%20Genius.pdf) | :video_game: [[**Genius Game**]](https://kevinyteixeira.github.io/geniusproject-fromdio/)
-- [x] ~~Introdução ao **ReactJS**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/13.%20Introdu%C3%A7%C3%A3o%20ao%20ReactJs.pdf)
-- [x] ~~Trabalhando com **Componentes em React**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/14.%20Trabalhando%20com%20Componentes%20em%20React.pdf)
-- [x] ~~Desenvolvimento de **aplicações para internet** com **ReactJS**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/15.%20Desenvolvimento%20de%20Aplica%C3%A7%C3%B5es%20para%20Internet%20com%20ReactJs.pdf)
-- [x] ~~**Práticas avançadas** em projetos com **ReactJS**~~; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/Certificados%20Bootcamp%20Eduzz%20Fullstack%20Developer/16.%20Pr%C3%A1ticas%20Avan%C3%A7adas%20em%20Projetos%20com%20ReactJs.pdf)
-- [ ] Introdução aos **React Hooks**; :file_folder: [[**Conteúdo**]](https://github.com/KevinyTeixeira/dio-desafio-github/blob/main/ReactsJs/README.md) | :paperclip: [**[Certificado]**]()
-- [ ] Criando aplicações móveis multiplataforma com **React Native**;
-- [ ] Desafios Básicos de JavaScript
-- [ ] Criando um front-end totalmente componentizado na prática com ReactJS
-- [ ] **MySql** - Trabalhando com as suas primeiras tabelas
-- [ ] Introdução ao **MongoDB** e Banco de Dados **NoSQL**;
-- [ ] Introdução ao **Node.js** com JavaScript;
-- [ ] Explorando o Estilo Arquitetural **REST** com Node.js;
-- [ ] Node.js com Banco de Dados Relacionais (SQL);
-- [ ] Microsserviços e Integrações com Node.js;
-- [ ] Desafios Médios em JavaScript;
-- [ ] Construindo Encurtador de URL;
-- [ ] Fundamentos de Arquitetura de Sistemas;
-- [ ] Introdução a orquestração de contêiners com **Docker**;
-- [ ] Introdução prática a computação em nuvem usando **AWS**;
